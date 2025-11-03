@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Check-In | Medicre</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Patient Check-In</h1>
+  </header>
+
+  <main>
+    <section class="checkin-form">
+      <h2>Confirm Arrival</h2>
+      <form action="check-in.php" method="POST">
+        <label for="patient-name">Patient Name:</label>
+        <input type="text" id="patient-name" name="patient_name" value="Rubina K." readonly>
+
+        <label for="arrival-time">Arrival Time:</label>
+        <input type="time" id="arrival-time" name="arrival_time" required>
+
+        <label for="notes">Notes:</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Optional notes..."></textarea>
+
+        <input type="submit" value="Confirm Check-In">
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Medicre Hospital System</p>
+  </footer>
+</body>
+</html>

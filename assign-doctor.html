@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Doctor | Medicre</title>
+</head>
+<body>
+    header>
+    <h1>Assign Doctor</h1>
+  </header>
+
+  <main>
+    <section class="assign-form">
+      <form action="assign-doctor.php" method="POST">
+        <label for="patient-name">Patient Name:</label>
+        <input type="text" id="patient-name" name="patient_name" value="Ramesh T." readonly>
+
+        <label for="department">Department:</label>
+        <select id="department" name="department">
+          <option value="cardiology">Cardiology</option>
+          <option value="general">General Medicine</option>
+          <option value="neurology">Neurology</option>
+        </select>
+
+        <label for="doctor">Select Doctor:</label>
+        <select id="doctor" name="doctor">
+          <option value="dr-sharma">Dr. Sharma</option>
+          <option value="dr-karki">Dr. Karki</option>
+          <option value="dr-thapa">Dr. Thapa</option>
+        </select>
+
+        <input type="submit" value="Assign Doctor">
+      </form>
+    </section>
+    </main>
+     <footer>
+    <p>&copy; 2025 Medicre Hospital System</p>
+  </footer>
+
+</body>
+</html>

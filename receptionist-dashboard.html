@@ -6,6 +6,49 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <header>
+    <h1>Receptionist Dashboard</h1>
+    <p>Welcome, Receptionist</p>
+  </header>
+  <nav>
+    <a href="appointments.html">Manage Appointments</a>
+    <a href="patients.html">Patient Records</a>
+    <a href="assign-doctor.html">Assign Doctor</a>
+    <a href="logout.php">Logout</a>
+  </nav>
+      <main>
+    <section class="dashboard-section">
+      <h2>Today's Bookings</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Patient Name</th>
+            <th>Department</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:30 AM</td>
+            <td>Rubina K.</td>
+            <td>General Medicine</td>
+            <td>Pending</td>
+            <td><a href="check-in.html">Check In</a></td>
+          </tr>
+          <tr>
+            <td>10:15 AM</td>
+            <td>Ramesh T.</td>
+            <td>Cardiology</td>
+            <td>Confirmed</td>
+            <td><a href="assign-doctor.html">Assign</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+
 </body>
 </html>
