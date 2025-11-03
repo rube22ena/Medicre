@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Medicre Hospital System</title>
+</head>
+<body>
+    <header>
+    <h1>Create Your Account</h1>
+    <p>Register to access your personalized dashboard</p>
+  </header>
+<main>
+    <div class="register-form">
+      <form action="register.php" method="POST">
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+          <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="role">Select Role:</label><br>
+        <select id="role" name="role" required>
+          <option value="">--Choose Role--</option>
+          <option value="doctor">Doctor</option>
+          <option value="patient">Patient</option>
+          <option value="receptionist">Receptionist</option>
+          <option value="admin">Admin</option>
+        </select><br><br>
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </main>
+      <footer>
+    <p>&copy; 2025 Medicre Hospital System | Contact: medicre@example.com</p>
+  </footer>
+
+</body>
+</html>
