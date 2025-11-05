@@ -11,7 +11,7 @@
   </header>
 
   <main>
-    <section class="checkin-form">
+    <div class="checkin-form">
       <h2>Confirm Arrival</h2>
       <form action="check-in.php" method="POST">
         <label for="patient-name">Patient Name:</label>
@@ -19,13 +19,13 @@
 
         <label for="arrival-time">Arrival Time:</label>
         <input type="time" id="arrival-time" name="arrival_time" required>
-
+        
         <label for="notes">Notes:</label>
         <textarea id="notes" name="notes" rows="4" placeholder="Optional notes..."></textarea>
 
         <input type="submit" value="Confirm Check-In">
       </form>
-    </section>
+    </div>
   </main>
 
   <footer>

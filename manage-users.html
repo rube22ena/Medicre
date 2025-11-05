@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Users | Medicre Admin</title>
+</head>
+<body>
+    <header>
+    <h1>Manage Users</h1>
+    <p>Admin Panel</p>
+  </header>
+
+  <nav>
+    <a href="admin-dashboard.html">Dashboard</a>
+    <a href="manage-users.html">Manage Users</a>
+    <a href="settings.html">System Settings</a>
+    <a href="logout.html">Logout</a>
+  </nav>
+
+  <main>
+    <section class="dashboard-section">
+      <h2>User List</h2>
+        <label for="role-filter">Filter by Role:</label>
+      <select id="role-filter">
+        <option value="all">All</option>
+        <option value="doctor">Doctor</option>
+        <option value="patient">Patient</option>
+        <option value="receptionist">Receptionist</option>
+        <option value="admin">Admin</option>
+      </select>
+        <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>Dr. Sharma</td>
+            <td>sharma@medicre.com</td>
+            <td>Doctor</td>
+            <td>
+              <a href="#">Edit</a> |
+              <a href="#">Deactivate</a>
+            </td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Rubina K.</td>
+            <td>rubina@example.com</td>
+            <td>Patient</td>
+            <td>
+              <a href="#">Edit</a> |
+              <a href="#">Deactivate</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Medicre Hospital System</p>
+  </footer>
+</body>
+
+
+
+</body>
+</html>

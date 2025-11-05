@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Patient Record | Medicre Hospital System</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Update Patient Record</h1>
+    <p>Doctor Panel</p>
+  </header>
+
+  <nav>
+    <a href="doctor-dashboard.html">Dashboard</a>
+    <a href="view-record.html">View Records</a>
+    <a href="update-record.html">Update Records</a>
+    <a href="logout.html">Logout</a>
+  </nav>
+
+  <main>
+    <section class="dashboard-section">
+      <h2>Patient: Rubina K.</h2>
+      <form action="update-record.php" method="POST">
+        <label for="diagnosis">Diagnosis:</label>
+        <textarea id="diagnosis" name="diagnosis" rows="3" required>Type 2 Diabetes</textarea>
+
+        <label for="prescription">Prescription:</label>
+        <textarea id="prescription" name="prescription" rows="3" required>Metformin 500mg twice daily</textarea>
+
+        <label for="notes">Doctor's Notes:</label>
+        <textarea id="notes" name="notes" rows="4">Patient advised to follow low-sugar diet and return in 2 weeks.</textarea>
+
+        <input type="hidden" name="patient_id" value="001">
+
+        <input type="submit" value="Save Record">
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Medicre Hospital System</p>
+  </footer>
+</body>
+</html>
