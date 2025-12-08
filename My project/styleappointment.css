@@ -1,0 +1,34 @@
+
+.add-appointment form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-appointment label {
+  margin: 8px 0 4px;
+  font-weight: bold;
+}
+
+.add-appointment input,
+.add-appointment select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.add-appointment button {
+  background: #19aa9e;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+.add-appointment button:hover {
+  background: #15b98d;
+}

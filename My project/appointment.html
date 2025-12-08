@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Page</title>
+  <link rel="stylesheet" href="styleappointment.css">
+</html>
+<!-- Add Appointment Form -->
+<div class="card add-appointment">
+  <h2>Add Appointment</h2>
+  <form>
+    <label for="patientName">Patient Name:</label>
+    <input type="text" id="patientName" name="patientName" placeholder="Enter patient name" required>
+
+    <label for="doctorName">Doctor:</label>
+    <input type="text" id="doctorName" name="doctorName" placeholder="Enter doctor name" required>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="time">Time:</label>
+    <input type="time" id="time" name="time" required>
+
+    <label for="department">Department:</label>
+    <select id="department" name="department" required>
+      <option value="">Select Department</option>
+      <option value="cardiology">Cardiology</option>
+      <option value="neurology">Neurology</option>
+      <option value="orthopedics">Orthopedics</option>
+      <option value="general">General</option>
+    </select>
+
+    <button type="submit">➕ Add Appointment</button>
+  </form>
+</div>
