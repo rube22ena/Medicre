@@ -12,7 +12,7 @@ $stmt->execute([$_SESSION['user_id']]);
 $records = $stmt->fetchAll();
 ?>
 <link rel="stylesheet" href="../includes/headerstyle.css">
-<link rel="stylesheet" href="view-record.css">
+<link rel="stylesheet" href="../css/view-record.css">
 <h2>My Medical Records</h2>
 <?php foreach($records as $r): ?>
  <div class="record-card">

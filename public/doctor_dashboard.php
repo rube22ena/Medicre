@@ -9,7 +9,7 @@ include '../includes/header.php';
 
 ?>
 <link rel="stylesheet" href="../includes/headerstyle.css">
-<link rel="stylesheet" href="doctor.css">
+<link rel="stylesheet" href="../css/doctor.css">
 <h2>Doctor Dashboard</h2>
 <p>Welcome, Dr. <?= htmlspecialchars($_SESSION['name']) ?>! Here are your appointments.</p>
 

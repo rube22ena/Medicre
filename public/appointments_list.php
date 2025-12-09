@@ -40,7 +40,7 @@ if ($role === 'receptionist') {
 }
 ?>
 <link rel="stylesheet" href="../includes/headerstyle.css">
-<link rel="stylesheet" href="appointment.css">
+<link rel="stylesheet" href="../css/appointment.css">
 <h2>Appointments</h2>
 <table border="1" cellpadding="6">
   <tr>

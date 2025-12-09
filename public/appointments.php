@@ -33,7 +33,7 @@ $stmt->execute([$_SESSION['user_id']]);
 $myAppointments = $stmt->fetchAll();
 ?>
 <link rel="stylesheet" href="../includes/headerstyle.css">
-<link rel="stylesheet" href="appointments.css">
+<link rel="stylesheet" href="../css/appointments.css">
 <h2>Book Appointment</h2>
 <form method="post">
   <label>Doctor</label><br>

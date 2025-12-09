@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <link rel="stylesheet" href="../includes/headerstyle.css">
-<link rel="stylesheet" href="updaterecord.css">
+<link rel="stylesheet" href="../css/updaterecord.css">
 <div class="record-form">
 
 <h2>Add Health Record</h2>

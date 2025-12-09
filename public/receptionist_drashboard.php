@@ -5,6 +5,8 @@ require_once '../includes/auth.php';
 requireRole('receptionist');
 include '../includes/header.php';
 ?>
+<link rel="stylesheet" href="../includes/headerstyle.css">
+<link rel="stylesheet" href="../css/receptionist.css">
 <div class="receptionist-dashboard">
 
 <h2>Receptionist Dashboard</h2>
