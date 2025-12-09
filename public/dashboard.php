@@ -3,7 +3,8 @@ require_once '../includes/auth.php';
 requireLogin();
 include '../includes/header.php';
 ?>
-
+<link rel="stylesheet" href="../includes/headerstyle.css">
+<link rel="stylesheet" href="dashboard.css">
 <h2>Welcome, <?= htmlspecialchars($_SESSION['name']); ?> (<?= $_SESSION['role']; ?>)</h2>
 
 <?php if($_SESSION['role'] === 'admin'): ?>

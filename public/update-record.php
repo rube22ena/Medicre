@@ -30,6 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   } else { $error = "Invalid appointment"; }
 }
 ?>
+<link rel="stylesheet" href="../includes/headerstyle.css">
+<link rel="stylesheet" href="updaterecord.css">
+<div class="record-form">
+
 <h2>Add Health Record</h2>
 <form method="post">
   <label>Appointment</label><br>
@@ -51,4 +55,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 <?php if(isset($msg)) echo "<p style='color:green;'>$msg</p>"; ?>
 <?php if(isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
+</div>
 <?php include '../includes/footer.php'; ?>

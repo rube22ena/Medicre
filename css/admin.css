@@ -1,0 +1,95 @@
+/* General page styling */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f8fb;
+  color: #0e0f0f;
+}
+
+/* Dashboard container */
+.dashboard {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Headings */
+.dashboard h2 {
+  color: #0f9691;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.dashboard h3 {
+  color: #0f9691;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+/* Welcome text */
+.dashboard p {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* Links list */
+.dashboard ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.dashboard ul a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0f9691;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.dashboard ul a:hover {
+  background: #0f9691;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* User table */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.user-table th, .user-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-table th {
+  background-color: #0f9691;
+  color: #fff;
+  font-weight: bold;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background-color: #eafaf9;
+  transition: background 0.3s;
+}

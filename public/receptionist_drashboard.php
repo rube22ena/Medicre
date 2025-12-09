@@ -5,6 +5,7 @@ require_once '../includes/auth.php';
 requireRole('receptionist');
 include '../includes/header.php';
 ?>
+<div class="receptionist-dashboard">
 
 <h2>Receptionist Dashboard</h2>
 <p>Welcome, <?= htmlspecialchars($_SESSION['name']) ?>! Here you can manage patient appointments.</p>
@@ -15,6 +16,6 @@ include '../includes/header.php';
 // Include the shared appointment list with receptionist actions
 include 'appointments_list.php';
 ?>
-
+</div>
 <!-- <?php include '../includes/footer.php';
  ?> -->

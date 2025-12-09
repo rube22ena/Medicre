@@ -1,6 +1,6 @@
 <?php
 require_once '../includes/db-connect.php';
-
+include '../includes/header.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = strtolower(trim($_POST['email'] ?? ''));
     $pass  = $_POST['password'] ?? '';
@@ -32,14 +32,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "Invalid email or password.";
     }
 
-include '../includes/header.php';
-?>
 
-<h2>Login</h2>
-<form method="post">
-  <input type="email" name="email" placeholder="Email" required><br>
-  <input type="password" name="password" placeholder="Password" required><br>
-  <button type="submit">Login</button>
-</form>
-<?php if(isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-<?php include '../includes/footer.php'; ?>
+?>
+<link rel="stylesheet" href="../includes/headerstyle.css">
+<link rel="stylesheet" href="../css/stylelogin.css">
+<link rel="stylesheet"href="../css/footer.css">
+<div class="login-container">
+  <h2>Login</h2>
+  <form method="post">
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="password" name="password" placeholder="Password" required><br>
+    <button type="submit">Login</button>
+    <div class="links">
+      <a href="#">Forgot Password?</a>
+      <a href="http://localhost/MEDICRE%20PROJECT/Medicre/public/register.php">Create an Account</a>
+    </div>
+  </form>
+  <?php if(isset($error)) echo "<p class='error-message'>$error</p>"; ?>
+</div>
+
+<!-- <?php include '../includes/footer.php'; ?> -->
+
+

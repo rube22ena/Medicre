@@ -1,0 +1,93 @@
+/* General page styling */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #0f9691 40%, #15c0b5 100%);
+  background-attachment: fixed;
+  color: #0e0f0f;
+}
+
+/* Registration container */
+.register-box {
+  max-width: 420px;
+  margin: 80px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+.register-box h2 {
+  color: #0f9691;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Labels */
+.register-box label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+/* Input fields */
+.register-box input[type="text"],
+.register-box input[type="email"],
+.register-box input[type="password"] {
+  width: 92%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.register-box input:focus {
+  border-color: #0f9691;
+  box-shadow: 0 0 10px rgba(15,150,145,0.4);
+  outline: none;
+  transform: scale(1.02);
+}
+
+/* Submit button */
+.register-box button {
+  width: 95%;
+  padding: 14px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #0f9691, #15c0b5);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register-box button:hover {
+  background: linear-gradient(135deg, #15c0b5, #0f9691);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Error message */
+.error-message {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15px;
+  color: red;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

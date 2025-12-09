@@ -1,0 +1,58 @@
+/* General page styling */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f8fb;
+  color: #0e0f0f;
+}
+
+/* Dashboard container */
+.receptionist-dashboard {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+.receptionist-dashboard h2 {
+  text-align: center;
+  color: #0f9691;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Welcome text */
+.receptionist-dashboard p {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* Logout link */
+.receptionist-dashboard a[href*="logout.php"] {
+  display: inline-block;
+  margin: 0 auto 25px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #dc3545;
+  border: 2px solid #dc3545;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.receptionist-dashboard a[href*="logout.php"]:hover {
+  background: #dc3545;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

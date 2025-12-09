@@ -1,0 +1,107 @@
+/* General page styling */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-image: url("../pictures/hospital.jpg"); /* adjust path if needed */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #0e0f0f;
+}
+
+/* Centered login container */
+.login-container {
+  max-width: 420px;
+  margin: 80px auto;
+  background: rgba(255,255,255,0.95);
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+.login-container h2 {
+  color: #0f9691;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Input fields */
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  width: 90%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-container input:focus {
+  border-color: #0f9691;
+  box-shadow: 0 0 8px rgba(15,150,145,0.4);
+  outline: none;
+}
+
+/* Submit button */
+.login-container button {
+  width: 95%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #0f9691;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.login-container button:hover {
+  background-color: #15c0b5;
+  transform: scale(1.05);
+}
+
+/* Links below form */
+.login-container a {
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  color: #0f9691;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.login-container a:hover {
+  color: #15c0b5;
+  text-decoration: underline;
+}
+
+/* Error message */
+.error-message {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15px;
+  color: red;
+}
+
+/* Optional div styling (for extra sections you add later) */
+.extra-section {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f4f8fb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

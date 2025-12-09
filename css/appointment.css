@@ -1,0 +1,94 @@
+/* General page styling */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f8fb;
+  color: #0e0f0f;
+}
+
+/* Page heading */
+h2 {
+  text-align: center;
+  color: #0f9691;
+  margin: 30px 0 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Table container */
+table {
+  width: 95%;
+  margin: 0 auto 40px;
+  border-collapse: collapse;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Table header */
+table th {
+  background-color: #0f9691;
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* Table cells */
+table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* Zebra striping */
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect */
+table tr:hover {
+  background-color: #eafaf9;
+  transition: background 0.3s;
+}
+
+/* Action buttons */
+button {
+  padding: 6px 12px;
+  margin: 2px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* Specific button styles */
+button[name="action"][value="confirm"] {
+  background-color: #28a745;
+  color: #fff;
+}
+
+button[name="action"][value="cancel"] {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+form button {
+  background-color: #0f9691;
+  color: #fff;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Footer spacing */
+footer {
+  margin-top: 40px;
+}

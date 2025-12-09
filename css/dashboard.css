@@ -1,0 +1,53 @@
+/* General page styling */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f8fb;
+  color: #0e0f0f;
+}
+
+/* Dashboard container */
+.dashboard {
+  max-width: 800px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Welcome heading */
+.dashboard h2 {
+  color: #0f9691;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Role-based links */
+.dashboard a {
+  display: inline-block;
+  margin: 12px;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #0f9691;
+  border: 2px solid #0f9691;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.dashboard a:hover {
+  background: #0f9691;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

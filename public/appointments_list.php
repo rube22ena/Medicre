@@ -39,6 +39,8 @@ if ($role === 'receptionist') {
   requireRole(['receptionist','doctor']);
 }
 ?>
+<link rel="stylesheet" href="../includes/headerstyle.css">
+<link rel="stylesheet" href="appointment.css">
 <h2>Appointments</h2>
 <table border="1" cellpadding="6">
   <tr>

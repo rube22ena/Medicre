@@ -1,4 +1,7 @@
-<?php
-?>
+<?php ?>
 <hr>
-<footer style="padding:8px; text-align:center; color:#666;">Medicre System</footer>
+<footer>
+  <p>🏥 Medicre System</p>
+  <!-- Optional links -->
+  <!-- <a href="about.php">About</a> | <a href="contact.php">Contact</a> -->
+</footer>

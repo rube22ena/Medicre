@@ -1,0 +1,110 @@
+/* General page styling */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f8fb;
+  color: #0e0f0f;
+}
+
+/* Form container */
+.record-form {
+  max-width: 600px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+.record-form h2 {
+  text-align: center;
+  color: #0f9691;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+/* Labels */
+.record-form label {
+  display: block;
+  font-weight: bold;
+  margin: 12px 0 6px;
+  color: #333;
+}
+
+/* Select dropdown */
+.record-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.record-form select:focus {
+  border-color: #0f9691;
+  box-shadow: 0 0 8px rgba(15,150,145,0.4);
+  outline: none;
+}
+
+/* Textareas */
+.record-form textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.record-form textarea:focus {
+  border-color: #0f9691;
+  box-shadow: 0 0 8px rgba(15,150,145,0.4);
+  outline: none;
+}
+
+/* Submit button */
+.record-form button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0f9691, #15c0b5);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.record-form button:hover {
+  background: linear-gradient(135deg, #15c0b5, #0f9691);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Success & error messages */
+.success-message {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15px;
+  color: green;
+}
+
+.error-message {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 15px;
+  color: red;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
