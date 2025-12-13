@@ -41,10 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 include '../includes/header.php';
 ?>
-<link rel="stylesheet" href="../includes/headerstyle.css">
-<link rel="stylesheet" href="../css/register.css">
-<div class="register-box">
-
 <h2>Register (Patient)</h2>
 <form method="post">
     <label>Full Name</label><br>
@@ -61,4 +57,4 @@ include '../includes/header.php';
 
 <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
 </div>
-<?php include '../includes/footer.php'; ?>
+<!-- <?php include '../includes/footer.php'; ?> -->

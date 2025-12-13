@@ -26,6 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Load all staff
 $staff = $pdo->query("SELECT user_id, name, email, role FROM user WHERE role!='patient' ORDER BY role, name")->fetchAll();
 ?>
+<link rel="stylesheet" href="../css/manage-user.css">
+<link rel="stylesheet" href="../includes/headerstyle.css">
 <h2>Manage Staff user</h2>
 <form method="post">
   <label>Name</label><br><input name="name" required><br>

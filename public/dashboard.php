@@ -8,7 +8,7 @@ include '../includes/header.php';
 <h2>Welcome, <?= htmlspecialchars($_SESSION['name']); ?> (<?= $_SESSION['role']; ?>)</h2>
 
 <?php if($_SESSION['role'] === 'admin'): ?>
- <a href="http://localhost/MEDICRE%20PROJECT/Medicre/admin/manage-users.php">Manage Users</a>
+ <a href="http://localhost/MEDICREPROJECT/Medicre/admin/manage-users.php">Manage Users</a>
 
 <?php elseif($_SESSION['role'] === 'doctor'): ?>
   <a href="appointments_list.php">My Appointments</a> |

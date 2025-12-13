@@ -18,7 +18,8 @@ $users = $pdo->query("
   GROUP BY role
 ")->fetchAll();
 ?>
-
+<link rel="stylesheet" href="../includes/headerstyle.css">
+<link rel="stylesheet" href="../css/reports.css">
 <h2>System Reports</h2>
 
 <h3>Appointment Statistics</h3>

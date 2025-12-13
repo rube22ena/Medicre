@@ -34,6 +34,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 ?>
+<style>
+    #site-footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+</style>
 <link rel="stylesheet" href="../includes/headerstyle.css">
 <link rel="stylesheet" href="../css/stylelogin.css">
 <link rel="stylesheet"href="../css/footer.css">
@@ -45,12 +53,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button type="submit">Login</button>
     <div class="links">
       <a href="#">Forgot Password?</a>
-      <a href="http://localhost/MEDICRE%20PROJECT/Medicre/public/register.php">Create an Account</a>
+      <a href="http://localhost/MEDICREPROJECT/Medicre/public/register.php">Create an Account</a>
     </div>
   </form>
   <?php if(isset($error)) echo "<p class='error-message'>$error</p>"; ?>
 </div>
 
-<!-- <?php include '../includes/footer.php'; ?> -->
+<?php include '../includes/footer.php'; ?>
 
 
