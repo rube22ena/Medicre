@@ -57,4 +57,5 @@ $staff = $pdo->query("SELECT user_id, name, email, role FROM user WHERE role!='p
     </tr>
   <?php endforeach; ?>
 </table>
-<?php include '../includes/footer.php'; ?>
+
+// include '../includes/footer.php';

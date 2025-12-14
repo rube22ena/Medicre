@@ -46,4 +46,6 @@ $users = $pdo->query("SELECT user_id, name, role, email FROM user ORDER BY role,
   </table>
 
 
-<?php include '../includes/footer.php'; ?> 
+
+
+ 

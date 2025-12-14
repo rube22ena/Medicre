@@ -57,7 +57,7 @@ $myAppointments = $stmt->fetchAll();
   <label>Time</label><br><input type="time" name="appointment_time" required><br><br>
   <button type="submit">Book</button>
 </form>
-
+<script src="../js/time.js"></script>
 <?php if(isset($msg)) echo "<p style='color:green;'>$msg</p>"; ?>
 <?php if(isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
 
@@ -77,4 +77,4 @@ $myAppointments = $stmt->fetchAll();
   <?php endforeach; ?>
 </table>
 
-<?php include '../includes/footer.php'; ?>
+

@@ -1,25 +1,41 @@
 <?php
 require_once '../includes/auth.php';
 requireLogin();
-include '../includes/header.php';
 ?>
-<link rel="stylesheet" href="../includes/headerstyle.css">
-<link rel="stylesheet" href="../css/dashboard.css">
-<h2>Welcome, <?= htmlspecialchars($_SESSION['name']); ?> (<?= $_SESSION['role']; ?>)</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../includes/headerstyle.css">
+  <link rel="stylesheet" href="../css/Dashboard.css">
+</head>
+<body>
+  <?php include '../includes/header.php'; ?>
 
-<?php if($_SESSION['role'] === 'admin'): ?>
- <a href="http://localhost/MEDICREPROJECT/Medicre/admin/manage-users.php">Manage Users</a>
+  <main>
+    <div class="dashboard-container">
+      <h2>Welcome, <?= htmlspecialchars($_SESSION['name']); ?> (<?= $_SESSION['role']; ?>)</h2>
 
-<?php elseif($_SESSION['role'] === 'doctor'): ?>
-  <a href="appointments_list.php">My Appointments</a> |
-  <a href="update-record.php">Add Record</a>
+      <div class="dashboard-links">
+        <?php if($_SESSION['role'] === 'admin'): ?>
+          <a href="manage-users.php">👥 Manage Users</a>
+        <?php elseif($_SESSION['role'] === 'doctor'): ?>
+          <a href="appointments_list.php">📅 My Appointments</a>
+          <a href="update-record.php">➕ Add Record</a>
+        <?php elseif($_SESSION['role'] === 'receptionist'): ?>
+          <a href="appointments_list.php">📅 Manage Appointments</a>
+        <?php elseif($_SESSION['role'] === 'patient'): ?>
+          <a href="appointments.php">📅 Book Appointment</a>
+          <a href="view-record.php">📄 My Records</a>
+        <?php endif; ?>
+      </div>
+    </div>
+  </main>
 
-<?php elseif($_SESSION['role'] === 'receptionist'): ?>
-  <a href="appointments_list.php">Manage Appointments</a>
 
-<?php elseif($_SESSION['role'] === 'patient'): ?>
-  <a href="appointments.php">Book Appointment</a> |
-  <a href="view-record.php">My Records</a>
-<?php endif; ?>
+</body>
+</html>
 
-<?php include '../includes/footer.php'; ?>
+
+ 

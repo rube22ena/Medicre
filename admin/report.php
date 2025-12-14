@@ -44,4 +44,3 @@ $users = $pdo->query("
   <?php endforeach; ?>
 </table>
 
-<?php include '../includes/footer.php'; ?>

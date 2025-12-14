@@ -19,5 +19,6 @@ requireRole('receptionist');
 include 'appointments_list.php';
 ?>
 </div>
-<!-- <?php include '../includes/footer.php';
- ?> -->
+
+
+ 

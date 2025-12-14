@@ -27,5 +27,5 @@ $records = $stmt->fetchAll();
     <?php endif; ?>
 
   </div>
-<?php endforeach; ?>
-<?php include '../includes/footer.php'; ?>
+<?php endforeach; ?> 
+

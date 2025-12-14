@@ -1,90 +1,83 @@
+/* General page styling */
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background-image: url("../pictures/hospital.jpg");
+ 
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #0e0f0f;
 }
 
-.register-container {
-  max-width: 420px;
-  margin: 80px auto;
+/* Registration box */
+.register-box {
+  max-width: 500px;
+  margin: 60px auto;
   background: rgba(255,255,255,0.95);
   padding: 35px;
   border-radius: 12px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   text-align: center;
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 0.8s ease-in-out
 }
 
-.register-container h2 {
+/* Heading */
+.register-box h2 {
   color: #0f9691;
   margin-bottom: 25px;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
 }
 
-.register-container input[type="text"],
-.register-container input[type="email"],
-.register-container input[type="password"] {
-  width: 90%;
+/* Labels */
+.register-box label {
+  display: block;
+  text-align: left;
+  margin: 12px 0 6px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input fields */
+.register-box input {
+  width: 100%;
   padding: 12px;
-  margin: 12px 0;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 15px;
+  margin-bottom: 15px;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.register-container input:focus {
+.register-box input:focus {
   border-color: #0f9691;
   box-shadow: 0 0 8px rgba(15,150,145,0.4);
   outline: none;
 }
 
-.register-container button {
-  width: 95%;
-  padding: 12px;
-  margin-top: 20px;
-  background-color: #0f9691;
+/* Submit button */
+.register-box button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0f9691, #15c0b5);
   color: #fff;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 17px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
 }
 
-.register-container button:hover {
-  background-color: #15c0b5;
+.register-box button:hover {
+  background: linear-gradient(135deg, #15c0b5, #0f9691);
   transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-.register-container a {
-  display: inline-block;
-  margin: 10px;
-  text-decoration: none;
-  color: #0f9691;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.register-container a:hover {
-  color: #15c0b5;
-  text-decoration: underline;
-}
-
-.error-message {
-  text-align: center;
-  font-weight: bold;
+/* Error message */
+.register-box p {
   margin-top: 15px;
+  font-weight: bold;
   color: red;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
 }

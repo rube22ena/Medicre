@@ -1,53 +1,74 @@
-/* General page styling */
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #f4f8fb;
+  background-image: url("../pictures/hospital.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #0e0f0f;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Dashboard container */
-.dashboard {
-  max-width: 800px;
-  margin: 60px auto;
-  background: #fff;
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-container {
+  max-width: 600px;
+  background: rgba(255,255,255,0.95);
   padding: 40px;
   border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
   text-align: center;
   animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Welcome heading */
-.dashboard h2 {
+.dashboard-container h2 {
   color: #0f9691;
   margin-bottom: 25px;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: bold;
 }
 
-/* Role-based links */
-.dashboard a {
-  display: inline-block;
-  margin: 12px;
-  padding: 12px 20px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #0f9691;
-  border: 2px solid #0f9691;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+.dashboard-links {
+  display: flex;
+  flex-direction: column;
+  gap: px;
+    margin-top: 30px;
 }
 
-.dashboard a:hover {
-  background: #0f9691;
+.dashboard-links a {
+  display: block;
+  padding: 12px;
+  background-color: #0f9691;
+    background: linear-gradient(135deg, #0f9691, #15c0b5);
   color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+    text-align: center;
+box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
 }
 
-/* Smooth fade-in animation */
+.dashboard-links a:hover {
+ background: linear-gradient(135deg, #15c0b5, #0f9691);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+  text-decoration: none;
+}
+
+
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }

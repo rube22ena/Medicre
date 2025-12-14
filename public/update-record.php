@@ -56,4 +56,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php if(isset($msg)) echo "<p style='color:green;'>$msg</p>"; ?>
 <?php if(isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
 </div>
-<?php include '../includes/footer.php'; ?>
+ 
+

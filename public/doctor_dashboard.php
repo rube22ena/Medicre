@@ -20,4 +20,6 @@ include '../includes/header.php';
 // Include the shared appointment list with doctor actions
 include 'appointments_list.php';
 ?> 
-<?php include '../includes/footer.php'; ?> 
+
+
+ 

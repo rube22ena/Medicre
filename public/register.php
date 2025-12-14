@@ -41,44 +41,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 ?>
-<!-- 
-<link rel="stylesheet" href="../includes/headerstyle.css"> -->
-<!-- <link rel="stylesheet" href="../css/register.css"> -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+
+
     <link rel="stylesheet" href="../includes/headerstyle.css">
-<link rel="stylesheet" href="../css/register.css">
-</head>
-<body>
-  
-<main>
+    <link rel="stylesheet" href="../css/Register.css">
+
     <div class="register-box">
       <h2>Register (Patient)</h2>
-      <form method="post">
-        <label>Full Name</label>
-        <input type="text" name="name" required>
+      <form  id="registerForm"method="post">
+        <label>Full Name</label><br>
+        <input type="text"id="name" name="name" required><br>
 
-        <label>Email</label>
-        <input type="email" name="email" required>
+        <label>Email</label><br>
+        <input type="email" id="email" name="email" required><br>
 
-        <label>Password</label>
-        <input type="password" name="password" required>
+        <label>Password</label><br>
+        <input type="password"id="password" name="password" required> <br>
 
         <button type="submit">Create an account</button>
       </form>
+       <div id="errorBox"></div>
 
       <?php if (isset($error)) echo "<p class='error-message'>$error</p>"; ?>
     </div>
-</main>
-
-  <footer>
-    <?php include '../includes/footer.php'; ?>
-  </footer>
+<script src="js/register.js"></script>
 </body>
 </html>
 
