@@ -4,7 +4,7 @@
 
 <head>
   <title>Medicre Hospital System - Home</title>
-  <!-- <link rel="stylesheet" href="../css/style.css"> -->
+  <link rel="stylesheet" href="../css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
@@ -14,20 +14,9 @@
     height: 400px;
     object-fit: cover;
   }
-/* Style only the Login nav-link */
-.nav-link.login-link {
-  color: #fff;               /* default text color */
-  transition: all 0.3s ease; /* smooth hover effect */
-  padding: 6px 12px;         /* spacing so it looks like a button */
-  border-radius: 4px;        /* rounded corners */
-}
 
-/* Hover effect */
-.nav-link.login-link:hover {
-  background-color: #fff;    /* white background */
-  color: #0f9691;            /* text color matches navbar background */
-  border: 1px solid #fff;    /* white border */
-}
+ 
+
 </style>
 <script src="js/script.js"></script>
 </body>

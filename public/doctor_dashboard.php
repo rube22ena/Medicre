@@ -4,7 +4,7 @@ require_once '../includes/db-connect.php';
 require_once '../includes/auth.php';
 requireRole('doctor');
 
-// include '../includes/header.php';
+include '../includes/header.php';
 
 
 ?>
@@ -20,5 +20,4 @@ requireRole('doctor');
 // Include the shared appointment list with doctor actions
 include 'appointments_list.php';
 ?> 
-
-<!-- <?php include '../includes/footer.php'; ?> -->
+<?php include '../includes/footer.php'; ?> 

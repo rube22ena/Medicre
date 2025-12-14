@@ -1,7 +1,7 @@
 <?php
 require_once '../includes/db-connect.php'; 
 require_once '../includes/auth.php';
-include '../includes/header.php';
+// include '../includes/header.php';
 
 $role = $_SESSION['role'];
 
@@ -72,4 +72,6 @@ if ($role === 'receptionist') {
     </tr>
   <?php endforeach; ?>
 </table>
-<!-- <?php include '../includes/footer.php'; ?> -->
+<!-- <?php
+//  include '../includes/footer.php'; 
+ ?>  -->

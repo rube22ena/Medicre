@@ -34,17 +34,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 ?>
-<style>
+<!-- <style>
     #site-footer {
   position: relative;
   bottom: 0;
   width: 100%;
 }
 
-</style>
+</style> -->
 <link rel="stylesheet" href="../includes/headerstyle.css">
 <link rel="stylesheet" href="../css/stylelogin.css">
-<link rel="stylesheet"href="../css/footer.css">
+<!-- <link rel="stylesheet"href="../css/footer.css"> -->
 <div class="login-container">
   <h2>Login</h2>
   <form method="post">

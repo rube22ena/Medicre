@@ -51,3 +51,24 @@
   top: 0;
   z-index: 1000;
 }
+html, body {
+  height: 100%;              /* full viewport height */
+  margin: 0;
+  display: flex;
+  flex-direction: column;    /* stack header, main, footer vertically */
+}
+
+main {
+  flex: 1;                   /* pushes footer down */
+}
+
+.footer {
+  background-color: #0f9691;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+.footer a, .footer span, .footer h5, .footer li {
+  color: #fff;               /* ensure text is white */
+  font-size: 16px;
+}

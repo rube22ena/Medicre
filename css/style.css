@@ -1,69 +1,32 @@
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-image: url("pictures/hospital.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: #0e0f0f;
+/* Navbar text styling */
+.navbar {
+  background-color: #0f9691 !important; /* keep your teal background */
 }
 
-/* Top bar: heading + nav in one line */
-.topbar {
-  background-color: #0f9691;
-  color: #fff;
-  display: flex;
-  justify-content: space-between; /* left: title, right: nav */
-  align-items: center;
-  padding: 15px 30px;
+.navbar .navbar-brand span,
+.navbar .nav-link,
+.navbar .login-link {
+  color: #fff !important;       /* force white text */
+  font-size: 24px !important;   /* bigger text */
+  font-weight: bold !important; /* bold text */
 }
 
-/* Logo + title */
-.logo-title {
-  display: flex;
-  align-items: center;
-  font-size: 26px;
-  font-weight: bold;
+/* Optional: make hover effect lighter */
+.navbar .nav-link:hover,
+.navbar .login-link:hover {
+  color: #f0f0f0 !important;
+  text-decoration: underline;
+}
+.nav-link.login-link {
+  color: #fff;               /* default text color */
+   transition: all 0.3s ease; /* smooth hover effect */
+   padding: 6px 12px;        /* spacing so it looks like a button */
+   border-radius: 4px;       /* rounded corners */ */
 }
 
-.logo-title img {
-  margin-right: 10px;
-}
-
-/* Navigation links */
-.topbar nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 12px;
-  font-weight: bold;
-  padding: 8px 14px;
-  border-radius: 6px;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.topbar nav a:hover {
-  background-color: #fff;
-  color: #0f9691;
-  transform: scale(1.05);
-}
-
-/* Content card */
-main {
-  max-width: 600px;
-  margin: 60px auto;
-  background: rgba(255,255,255,0.9);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  text-align: center;
-}
-
-main h2 {
-  color: #0f9691;
-  margin-bottom: 15px;
-}
-
-main p {
-  font-size: 16px;
-  line-height: 1.6;
-}
+/* Hover effect */
+ .nav-link.login-link:hover {
+  background-color: #fff;    /* white background */
+   color: #0f9691;            /* text color matches navbar background */
+   border: 1px solid #fff;    
+ } 
