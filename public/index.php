@@ -131,7 +131,7 @@
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-success-emphasis">Medicre</strong>
-            <h3 class="mb-0">Appointment</h3>
+            <h3 class="mb-0">appointments</h3>
             <div class="mb-1 text-body-secondary">Dec 11</div>
             <p class="mb-auto">We’ve made life easier for patients and doctors. Now patients can instantly book
               appointments with the top doctors and avoid having to stand in long queues.</p>
@@ -143,7 +143,7 @@
           </div>
           <div class="col-auto d-none d-lg-block">
             <img class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img" width="200"
-              src="https://static.vecteezy.com/system/resources/previews/006/095/578/original/an-appointment-icon-flat-outline-concept-vector.jpg"
+              src="https://static.vecteezy.com/system/resources/previews/006/095/578/original/an-appointments-icon-flat-outline-concept-vector.jpg"
               alt="">
           </div>
         </div>

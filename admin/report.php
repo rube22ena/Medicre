@@ -4,7 +4,7 @@ require_once '../includes/auth.php';
 // requireRole('admin');
 include '../includes/header.php';
 
-// Appointment stats
+// appointments stats
 $stats = $pdo->query("
   SELECT status, COUNT(*) AS count
   FROM appointments
@@ -12,7 +12,7 @@ $stats = $pdo->query("
 ")->fetchAll();
 
 // User stats
-$users = $pdo->query("
+$user = $pdo->query("
   SELECT role, COUNT(*) AS count
   FROM user
   GROUP BY role
@@ -22,7 +22,7 @@ $users = $pdo->query("
 <link rel="stylesheet" href="../css/reports.css">
 <h2>System Reports</h2>
 
-<h3>Appointment Statistics</h3>
+<h3>appointments Statistics</h3>
 <table border="1" cellpadding="6">
   <tr><th>Status</th><th>Count</th></tr>
   <?php foreach($stats as $s): ?>
@@ -36,7 +36,7 @@ $users = $pdo->query("
 <h3>User Statistics</h3>
 <table border="1" cellpadding="6">
   <tr><th>Role</th><th>Count</th></tr>
-  <?php foreach($users as $u): ?>
+  <?php foreach($user as $u): ?>
     <tr>
       <td><?= htmlspecialchars($u['role']) ?></td>
       <td><?= $u['count'] ?></td>

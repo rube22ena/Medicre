@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($user['role'] === 'admin') {
       header('Location: admin_dashboard.php');
     } elseif ($user['role'] === 'patient') {
-      header('Location: appointments.php');   // 👈 put it here
+      header('Location: doctor_list.php');   // 👈 put it here
       exit;
     }
   }
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <input type="password" id="loginPassword" name="password" placeholder="Password" required><br>
     <button type="submit">Login</button>
     <div class="links">
-      <a href="#">Forgot Password?</a>
+      <!-- <a href="#">Forgot Password?</a> -->
       <a href="http://localhost/MEDICREPROJECT/Medicre/public/register.php">Create an Account</a>
     </div>
   </form>

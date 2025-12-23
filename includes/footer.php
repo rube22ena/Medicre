@@ -1,18 +1,19 @@
-<footer id="site-footer"  style="background-color: #0f9691;" text-white pt-4 pb-3>
+<footer id="site-footer" class="text-white pt-4 pb-3" style="background-color: #0f9691;">
   <div class="container">
     <div class="row">
-      <!-- Left: Branding and Award -->
+      <!-- Left: Branding -->
       <div class="col-md-6 mb-3">
-       <a class="navbar-brand" href="#"> <img src="pictures/logo-removebg-preview.png" alt="logo" height="50" width="50">
-        <span>Medicre Hospital System</span></a>
-       
+        <a class="navbar-brand" href="#">
+          <img src="pictures/logo-removebg-preview.png" alt="Medicre logo" height="50" width="50">
+          <span>Medicre Hospital System</span>
+        </a>
       </div>
 
       <!-- Right: Contact Info -->
       <div class="col-md-6">
         <h5>Contact Us</h5>
         <ul class="list-unstyled">
-          <li><strong>Address:</strong>  Kathmandu,Nepal</li>
+          <li><strong>Address:</strong> Kathmandu, Nepal</li>
           <li><strong>Email:</strong> info@Medicre.org | Medicrenepal@gmail.com</li>
           <li><strong>Phone:</strong> +977-9800000008 | +977-9888989898</li>
         </ul>

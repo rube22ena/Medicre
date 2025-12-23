@@ -1,0 +1,61 @@
+.doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+@media (max-width: 900px) {
+  .doctor-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .doctor-grid { grid-template-columns: 1fr; }
+}
+
+.doctor-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-photo img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.doctor-info {
+  padding: 12px 14px;
+}
+.doctor-info h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+.doctor-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #374151;
+}
+
+.doctor-actions {
+  padding: 12px 14px;
+  border-top: 1px solid #f1f5f9;
+  text-align: center;
+}
+
+.appointments-btn {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.appointments-btn:hover {
+  background: #1e40af;
+}

@@ -5,26 +5,34 @@ requireRole('admin');
 include '../includes/header.php';
 
 // Handle form submission
+// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $name = trim($_POST['name'] ?? '');
   $email = strtolower(trim($_POST['email'] ?? ''));
   $pass = $_POST['password'] ?? '';
   $role = $_POST['role'] ?? '';
+  $specialization = $_POST['specialization'] ?? '';
 
-  if ($name && filter_var($email, FILTER_VALIDATE_EMAIL) && strlen($pass) >= 6 && in_array($role, ['admin','doctor','receptionist'])) {
-    $hash = password_hash($pass, PASSWORD_DEFAULT);
-    $stmt = $pdo->prepare("INSERT INTO user (name,email,password_hash,role) VALUES (?,?,?,?)");
-    try {
-      $stmt->execute([$name,$email,$hash,$role]);
-      $msg = "User created successfully!";
-    } catch (PDOException $e) {
-      $error = "Email already exists";
-    }
-  } else { $error = "Invalid input"; }
+  if ($name && filter_var($email, FILTER_VALIDATE_EMAIL) && strlen($pass) >= 6 
+      && in_array($role, ['admin','doctor','receptionist']) && $specialization) {
+      
+      $hash = password_hash($pass, PASSWORD_DEFAULT);
+      $stmt = $pdo->prepare("INSERT INTO user (name,email,password_hash,role,specialization) VALUES (?,?,?,?,?)");
+      try {
+          $stmt->execute([$name,$email,$hash,$role,$specialization]);
+          $msg = "User created successfully!";
+      } catch (PDOException $e) {
+          $error = "Email already exists";
+      }
+  } else { 
+      $error = "Invalid input"; 
+  }
 }
 
+
 // Load all staff
-$staff = $pdo->query("SELECT user_id, name, email, role FROM user WHERE role!='patient' ORDER BY role, name")->fetchAll();
+$staff = $pdo->query("SELECT user_id, name, email, role, specialization 
+                      FROM user WHERE role!='patient' ORDER BY role, name")->fetchAll();
 ?>
 <link rel="stylesheet" href="../css/manage-user.css">
 <link rel="stylesheet" href="../includes/headerstyle.css">
@@ -40,6 +48,14 @@ $staff = $pdo->query("SELECT user_id, name, email, role FROM user WHERE role!='p
     <option value="doctor">Doctor</option>
     <option value="receptionist">Receptionist</option>
   </select><br><br>
+  <label>Specialization</label><br>
+<select name="specialization" required>
+  <option value="">Select Specialization</option>
+  <option value="Cardiology">Cardiology</option>
+  <option value="Neurology">Neurology</option>
+  <option value="Orthopedics">Orthopedics</option>
+  <option value="General">General</option>
+</select><br><br>
   <button type="submit">Create User</button>
 </form>
 <?php if(isset($msg)) echo "<p style='color:green;'>$msg</p>"; ?>
@@ -47,15 +63,17 @@ $staff = $pdo->query("SELECT user_id, name, email, role FROM user WHERE role!='p
 
 <h3>Existing Staff</h3>
 <table border="1" cellpadding="6">
-  <tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th></tr>
+  <tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th><th>Specialization</th></tr>
   <?php foreach($staff as $s): ?>
     <tr>
       <td><?= $s['user_id'] ?></td>
       <td><?= htmlspecialchars($s['name']) ?></td>
       <td><?= htmlspecialchars($s['email']) ?></td>
       <td><?= $s['role'] ?></td>
+      <td><?= htmlspecialchars($s['specialization']) ?></td>
     </tr>
   <?php endforeach; ?>
 </table>
+
 
 // include '../includes/footer.php';
