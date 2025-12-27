@@ -1,5 +1,6 @@
 <?php
 require_once '../includes/db-connect.php';
+require_once '../includes/auth.php';
 include '../includes/header.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = strtolower(trim($_POST['email'] ?? ''));

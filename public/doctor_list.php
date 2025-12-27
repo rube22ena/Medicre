@@ -4,9 +4,9 @@ require_once '../includes/auth.php';
 requireRole(['patient']); // only patients can view and book
 include '../includes/header.php';
 
-// Load six doctors
+// Load all doctors
 $doctors = $pdo->query("SELECT user_id, name, specialization, photo 
-                        FROM user WHERE role='doctor' ORDER BY name LIMIT 6")->fetchAll();
+                        FROM user WHERE role='doctor' ORDER BY name ")->fetchAll();
 ?>
 
 <link rel="stylesheet" href="../css/doctor-grid.css">
@@ -22,10 +22,10 @@ $doctors = $pdo->query("SELECT user_id, name, specialization, photo
       <?php endif; ?>
       <h3><?= htmlspecialchars($d['name']) ?></h3>
       <p><?= htmlspecialchars($d['specialization']) ?></p>
-      <form method="post" action="appointment.php">
-        <input type="hidden" name="doctor_id" value="<?= $d['user_id'] ?>">
-        <button type="submit">Select</button>
-      </form>
+      <form method="get" action="appointments.php">
+  <input type="hidden" name="doctor_id" value="<?= $d['user_id'] ?>">
+  <button type="submit">Select</button>
+</form>
     </div>
   <?php endforeach; ?>
 </div>

@@ -123,7 +123,7 @@
           </div>
           <div class="col-auto d-none d-lg-block">
             <img class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img" width="200"
-              src="https://www.shutterstock.com/image-vector/medical-record-logo-vector-260nw-1324999502.jpg" alt="">
+              src="http://localhost/MEDICREPROJECT/Medicre/uploads/medical-record-logo-.png" alt="">
           </div>
         </div>
       </div>
@@ -131,7 +131,7 @@
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-success-emphasis">Medicre</strong>
-            <h3 class="mb-0">appointments</h3>
+            <h3 class="mb-0">Appointments</h3>
             <div class="mb-1 text-body-secondary">Dec 11</div>
             <p class="mb-auto">We’ve made life easier for patients and doctors. Now patients can instantly book
               appointments with the top doctors and avoid having to stand in long queues.</p>
@@ -143,7 +143,7 @@
           </div>
           <div class="col-auto d-none d-lg-block">
             <img class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img" width="200"
-              src="https://static.vecteezy.com/system/resources/previews/006/095/578/original/an-appointments-icon-flat-outline-concept-vector.jpg"
+              src="http://localhost/MEDICREPROJECT/Medicre/uploads/appointmnent.png"
               alt="">
           </div>
         </div>
@@ -169,7 +169,7 @@
           </div>
           <div class="col-auto d-none d-lg-block">
             <img class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img" width="200"
-              src="https://as1.ftcdn.net/v2/jpg/05/04/71/44/1000_F_504714429_wk0IpfkSxrfwURva8gFcDBGXM6AV1yki.jpg" alt="">
+              src="http://localhost/MEDICREPROJECT/Medicre/uploads/medical%20lab.png" alt="">
           </div>
         </div>
       </div>
@@ -188,7 +188,7 @@
           </div>
           <div class="col-auto d-none d-lg-block">
             <img class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img" width="200"
-              src="https://tse4.mm.bing.net/th/id/OIP.lNhp2Pfc368QAIfKf5QzjQAAAA?cb=ucfimg2&ucfimg=1&w=286&h=320&rs=1&pid=ImgDetMain&o=7&rm=3"
+              src="http://localhost/MEDICREPROJECT/Medicre/uploads/doctor%20and%20staff.png"
               alt="">
           </div>
         </div>

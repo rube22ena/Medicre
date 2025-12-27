@@ -32,6 +32,7 @@ $appts = $pdo->query("
     <th>Date</th>
     <th>Time</th>
     <th>Status</th>
+    <th>Actions</th>
   </tr>
   <?php foreach($appts as $a): ?>
     <tr>
@@ -47,6 +48,13 @@ $appts = $pdo->query("
       <td><?= $a['appointment_date'] ?></td>
       <td><?= $a['appointment_time'] ?></td>
       <td><?= $a['status'] ?></td>
+      <td>
+        <form method="post" action="update_status.php" style="display:inline;">
+          <input type="hidden" name="appointment_id" value="<?= $a['appointment_id'] ?>">
+          <button type="submit" name="status" value="Confirmed">Confirm</button>
+          <button type="submit" name="status" value="Cancelled">Cancel</button>
+        </form>
+      </td>
     </tr>
   <?php endforeach; ?>
 </table>

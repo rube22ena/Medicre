@@ -2,14 +2,23 @@
 require_once '../includes/db-connect.php';
 require_once '../includes/auth.php';
 requireRole('doctor');
-
 include '../includes/header.php';
 
-// Handle doctor action: mark checked-in
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['complete_id'])) {
-    $aid = (int)$_POST['complete_id'];
-    $stmt = $pdo->prepare("UPDATE appointments SET status='checked-in' WHERE appointment_id=? AND doctor_id=?");
-    $stmt->execute([$aid, $_SESSION['user_id']]);
+$doctor_id = $_SESSION['user_id'];
+
+// Handle doctor actions
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['confirm_id'])) {
+        $aid = (int)$_POST['confirm_id'];
+        $pdo->prepare("UPDATE appointments SET status='confirmed' WHERE appointment_id=? AND doctor_id=?")
+            ->execute([$aid, $doctor_id]);
+    }
+
+    if (isset($_POST['checkin_id'])) {
+        $aid = (int)$_POST['checkin_id'];
+        $pdo->prepare("UPDATE appointments SET status='checked-in' WHERE appointment_id=? AND doctor_id=?")
+            ->execute([$aid, $doctor_id]);
+    }
 }
 
 // --- Filtering logic ---
@@ -23,15 +32,13 @@ $sql = "
     JOIN patient_details p ON p.appointment_id = a.appointment_id
     WHERE a.doctor_id = ?
 ";
+$params = [$doctor_id];
 
 if ($filter === 'today') {
     $sql .= " AND a.appointment_date = ?";
-    $params = [$_SESSION['user_id'], $today];
+    $params[] = $today;
 } elseif ($filter === 'confirmed') {
     $sql .= " AND a.status = 'confirmed'";
-    $params = [$_SESSION['user_id']];
-} else {
-    $params = [$_SESSION['user_id']];
 }
 
 $sql .= " ORDER BY a.appointment_date, a.appointment_time";
@@ -45,8 +52,9 @@ $appts = $stmt->fetchAll();
 
 <h2>Doctor Dashboard</h2>
 <p>Welcome, Dr. <?= htmlspecialchars($_SESSION['name']) ?>! Here are your appointments.</p>
-
-<!-- Filter buttons -->
+<?php if(isset($_GET['msg']) && $_GET['msg'] === 'record_saved'): ?>
+  <p style="color:green; font-weight:bold;">Record saved successfully!</p>
+<?php endif; ?>
 <div class="filters">
   <a href="?filter=all">All</a> |
   <a href="?filter=today">Today</a> |
@@ -55,18 +63,9 @@ $appts = $stmt->fetchAll();
 
 <table border="1" cellpadding="6">
   <tr>
-    <th>ID</th>
-    <th>Patient</th>
-    <th>Gender</th>
-    <th>Age</th>
-    <th>Mobile</th>
-    <th>Email</th>
-    <th>Address</th>
-    <th>Dept</th>
-    <th>Date</th>
-    <th>Time</th>
-    <th>Status</th>
-    <th>Action</th>
+    <th>ID</th><th>Patient</th><th>Gender</th><th>Age</th><th>Mobile</th>
+    <th>Email</th><th>Address</th><th>Dept</th><th>Date</th><th>Time</th>
+    <th>Status</th><th>Action</th>
   </tr>
   <?php foreach($appts as $a): ?>
     <tr>
@@ -82,11 +81,20 @@ $appts = $stmt->fetchAll();
       <td><?= $a['appointment_time'] ?></td>
       <td><?= $a['status'] ?></td>
       <td>
-        <?php if($a['status'] === 'confirmed'): ?>
+        <?php if($a['status'] === 'pending'): ?>
           <form method="post" style="display:inline;">
-            <input type="hidden" name="complete_id" value="<?= $a['appointment_id'] ?>">
+            <input type="hidden" name="confirm_id" value="<?= $a['appointment_id'] ?>">
+            <button>Confirm</button>
+          </form>
+        <?php elseif($a['status'] === 'confirmed'): ?>
+          <form method="post" style="display:inline;">
+            <input type="hidden" name="checkin_id" value="<?= $a['appointment_id'] ?>">
             <button>Mark Checked-in</button>
           </form>
+        <?php elseif($a['status'] === 'checked-in'): ?>
+          <a href="update-record.php?appointment_id=<?= $a['appointment_id'] ?>">
+            <button>Add Record</button>
+          </a>
         <?php endif; ?>
       </td>
     </tr>
