@@ -5,7 +5,7 @@ require_once __DIR__ . '/auth.php';
 
 <header class="topbar">
   <div class="logo-title">
-    <img src="/MedicreProject/Medicre/pictures/logo-removebg-preview.png" alt="Medicre logo" height="50" width="50">
+    <img src="pictures/logo-removebg-preview.png" alt="Medicre logo" height="50" width="50">
     <a href="/MedicreProject/Medicre/public/index.php" class="brand">Medicre Hospital System</a>
   </div>
   <nav class="nav-links">

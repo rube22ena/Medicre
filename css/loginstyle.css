@@ -1,45 +1,36 @@
-/* Register.css */
-.register-box {
-  width: 350px;
-  margin: 70px auto;
-  padding: 30px;
+
+.login-container {
+  width: 320px;
+  margin: 80px auto;
+  padding: 25px;
   background: #fff;
-  border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
-.register-box h2 {
+.login-container h2 {
   margin-bottom: 20px;
-  text-align: center;
   color: #0f9691;
 }
 
-.register-box label {
-  display: block;
-  margin-top: 12px;
-  font-weight: bold;
-  color: #333;
-}
-
-.register-box input {
-  width: 95%;
+.login-container input {
+  width: 90%;
   padding: 10px;
-  margin-top: 6px;
+  margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 6px;
   outline: none;
   transition: border 0.3s;
 }
 
-.register-box input:focus {
+.login-container input:focus {
   border: 1px solid #0f9691;
 }
 
-.register-box button {
-  width: 100%;
+.login-container button {
+  width: 95%;
   padding: 12px;
-  margin-top: 15px;
   background: #0f9691;
   color: white;
   border: none;
@@ -49,17 +40,30 @@
   transition: background 0.3s;
 }
 
-.register-box button:hover {
+.login-container button:hover {
   background: #0c7a76;
 }
 
+.links {
+  margin-top: 12px;
+}
+
+.links a {
+  color: #0f9691;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
 #errorBox,
+#errorLoginBox,
 .error-message {
   min-height: 20px;
   margin-top: 10px;
   font-size: 14px;
   color: red;
-  text-align: center;
 }
 footer {
   position: fixed;

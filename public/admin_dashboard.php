@@ -6,22 +6,14 @@ requireRole('admin');
 
 include '../includes/header.php';
 ?>
-
+<link rel="stylesheet" href="../includes/headerstyle.css">
+<link rel="stylesheet" href="../css/Admin.css">
+<div class="admin-dashboard">
 <h2>Admin Dashboard</h2>
 <p>Welcome, <?= htmlspecialchars($_SESSION['name']) ?>! You can view all appointments and manage user here.</p>
-<ul>
-  <li><a href="http://localhost/MEDICREPROJECT/Medicre/admin/manage-users.php">👥Manage user</a></li>
- 
-
-  <li><a href="http://localhost/MEDICREPROJECT/Medicre/admin/report.php">📑View Reports</a></li>
-</ul>
-
-
-
-
+</div>
 <h3>👥User Management</h3>
-<link rel="stylesheet" href="../includes/headerstyle.css">
-<link rel="stylesheet" href="../css/admin.css">
+<div class="admin-grid">
 <?php
 // Load all user
 $user = $pdo->query("SELECT user_id, name, role, email FROM user ORDER BY role, name")->fetchAll();
@@ -44,6 +36,9 @@ $user = $pdo->query("SELECT user_id, name, role, email FROM user ORDER BY role, 
       <?php endforeach; ?>
     </tbody>
   </table>
+  
+<?php
+include '../includes/footer.php';
 
 
 

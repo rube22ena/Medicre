@@ -1,3 +1,5 @@
+/* receptionist.css */
+
 /* General page styling */
 body {
   margin: 0;
@@ -32,23 +34,59 @@ body {
   margin-bottom: 25px;
 }
 
-/* Logout link */
-.receptionist-dashboard a[href*="logout.php"] {
-  display: inline-block;
-  margin: 0 auto 25px;
+/* Section heading */
+h3 {
+  color: #0f9691;
+  font-size: 22px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Doctor list table */
+table {
+  width: 90%;
+  margin: 0 auto 30px auto;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+table th, table td {
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+table th {
+  background: #0f9691;
+  color: white;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+table tr:hover {
+  background: #eef9f8;
+  transition: background 0.3s ease;
+}
+
+/* Action links */
+table a {
+  color: #0f9691;
   text-decoration: none;
   font-weight: bold;
-  color: #dc3545;
-  border: 2px solid #dc3545;
-  padding: 8px 16px;
-  border-radius: 8px;
+  margin: 0 6px;
   transition: all 0.3s ease;
 }
 
-.receptionist-dashboard a[href*="logout.php"]:hover {
-  background: #dc3545;
+table a:hover {
   color: #fff;
-  transform: scale(1.05);
+  background: #0f9691;
+  padding: 4px 8px;
+  border-radius: 6px;
 }
 
 /* Smooth fade-in animation */

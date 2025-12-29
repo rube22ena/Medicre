@@ -1,7 +1,7 @@
 <?php
 require_once '../includes/db-connect.php';
 include '../includes/header.php';
-
+include_once '../includes/auth.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name'] ?? '');
     $email = strtolower(trim($_POST['email'] ?? ''));
@@ -45,19 +45,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     <link rel="stylesheet" href="../includes/headerstyle.css">
-    <link rel="stylesheet" href="../css/Register.css">
+    <link rel="stylesheet" href="../css/register.css">
 
     <div class="register-box">
       <h2>Register (Patient)</h2>
       <form  id="registerForm"method="post">
         <label>Full Name</label><br>
-        <input type="text"id="name" name="name" required><br>
+<input type="text" id="name" name="name" 
+       value="<?= htmlspecialchars($_POST['name'] ?? '') ?>" required><br>
 
-        <label>Email</label><br>
-        <input type="email" id="email" name="email" required><br>
+<label>Email</label><br>
+<input type="email" id="email" name="email" 
+       value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required><br>
 
-        <label>Password</label><br>
-        <input type="password"id="password" name="password" required> <br>
+<label>Password</label><br>
+<input type="password" id="password" name="password" required><br>
 
         <button type="submit">Create an account</button>
       </form>
@@ -65,8 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       <?php if (isset($error)) echo "<p class='error-message'>$error</p>"; ?>
     </div>
-<script src="js/register.js"></script>
+<script src="../js/register.js"></script>
 </body>
 </html>
 
+
+<?php include '../includes/footer.php'; ?>
 

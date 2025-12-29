@@ -24,26 +24,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($user['role'] === 'admin') {
       header('Location: admin_dashboard.php');
     } elseif ($user['role'] === 'patient') {
-      header('Location: doctor_list.php');   // 👈 put it here
+      header('Location: doctor_list.php'); 
+      }  // 👈 put it here
       exit;
-    }
+    
   }
 
-} else {
+ else {
   $error = "Invalid email or password.";
+}
 }
 
 
 ?>
 
 <link rel="stylesheet" href="../includes/headerstyle.css">
-<link rel="stylesheet" href="../css/stylelogin.css">
+<link rel="stylesheet" href="../css/Loginstyle.css">
 
 <div class="login-container">
   <h2>Login</h2>
- <form id="loginForm" method="post">
+  <form id="loginForm" method="post">
     <input type="email" id="loginEmail" name="email" placeholder="Email" required><br>
-<input type="password" id="loginPassword" name="password" placeholder="Password" required><br>
+    <input type="password" id="loginPassword" name="password" placeholder="Password" required><br>
     <button type="submit">Login</button>
     <div class="links">
       <!-- <a href="#">Forgot Password?</a> -->
@@ -55,4 +57,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "<p class='error-message'>$error</p>"; ?>
 </div>
 
-<script src="../js/login.js"></script>
+<script src="../js/Login.js"></script>
+<?php include '../includes/footer.php'; ?>

@@ -1,41 +1,167 @@
+/* Appointments.css */
+
+/* General page styling */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f8fb;
+  color: #0e0f0f;
+}
+
+/* Page headings */
+h2 {
+  text-align: center;
+  color: #0f9691;
+  font-size: 26px;
+  margin: 30px 0 20px 0;
+}
+
+/* Doctor summary section */
 .doctor-summary {
   display: flex;
-  gap: 16px;
   align-items: center;
-  margin: 16px 0;
-  padding: 12px;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
   background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
+
 .doctor-summary img {
   width: 120px;
   height: 120px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
+  border: 3px solid #0f9691;
 }
 
-.appointment-form {
-  display: grid;
-  gap: 12px;
-  max-width: 500px;
-  margin-top: 20px;
+.doctor-summary h3 {
+  margin: 0;
+  color: #0f9691;
+  font-size: 20px;
 }
-.appointment-form input,
-.appointment-form select,
-.appointment-form textarea {
-  padding: 10px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
+
+.doctor-summary p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Appointment booking form */
+.appointments-form {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.appointments-form label {
+  font-weight: bold;
+  color: #0f9691;
+}
+
+.appointments-form input,
+.appointments-form select,
+.appointments-form textarea {
   width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 14px;
 }
-.appointment-form button {
-  padding: 10px 12px;
-  background: #2563eb;
+
+.appointments-form button {
+  width: 100%;
+  padding: 10px;
+  background: #0f9691;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
-.appointment-form button:hover {
-  background: #1e40af;
+
+.appointments-form button:hover {
+  background: #0c7a76;
+  transform: scale(1.03);
+}
+
+.appointments-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Messages (success/error) */
+p[style*="color:green"],
+p[style*="color:red"],
+p[style*="color:orange"] {
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Patient appointments table */
+table {
+  width: 95%;
+  margin: 0 auto 30px auto;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+table th, table td {
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+}
+
+table th {
+  background: #0f9691;
+  color: white;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+table tr:hover {
+  background: #eef9f8;
+  transition: background 0.3s ease;
+}
+
+/* Buttons inside table */
+table button {
+  background: #0f9691;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+table button:hover {
+  background: #0c7a76;
+  transform: scale(1.05);
+}
+
+/* My Record button (different color) */
+table a button {
+  background: #4caf50;
+}
+
+table a button:hover {
+  background: #3d8c40;
 }

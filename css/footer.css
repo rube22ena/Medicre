@@ -1,4 +1,4 @@
-/* Footer styling
+/* Footer styling */
 footer {
   background: #f4f8fb;
   padding: 15px;
@@ -9,23 +9,29 @@ footer {
   margin-top: 40px;
 }
 
-/* Footer text */
-/* footer p {
+/* Footer text  */
+ footer p {
   margin: 0;
   font-weight: bold;
   color: #0f9691;
-} */
+} 
 
 /* Optional footer links */
-/* footer a {
+footer a {
   color: #0f9691;
   text-decoration: none;
   margin: 0 10px;
   font-weight: bold;
   transition: color 0.3s;
-} */
-/* 
+}
+
 footer a:hover {
   color: #15c0b5;
-  text-decoration: underline; */
-} */
+  text-decoration: underline;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

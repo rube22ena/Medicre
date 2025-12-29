@@ -1,0 +1,99 @@
+/* doctor_schedule.css */
+
+/* Page heading */
+h2 {
+  text-align: center;
+  color: #0f9691;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Messages */
+p[style*="color:green"],
+p[style*="color:red"],
+p[style*="color:orange"] {
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Form styling */
+.doctor-schedule-form {
+  max-width: 480px;
+  margin: 0 auto 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.doctor-schedule-form label {
+  font-weight: bold;
+  color: #0f9691;
+}
+
+.doctor-schedule-form input,
+.doctor-schedule-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.doctor-schedule-form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  background: #0f9691;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.doctor-schedule-form button:hover {
+  background: #0c7a76;
+}
+
+/* Table styling */
+table {
+  width: 90%;
+  margin: 0 auto 30px auto;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+table th, table td {
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background: #0f9691;
+  color: white;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+table button {
+  background: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+table button:hover {
+  background: #e0e0e0;
+}

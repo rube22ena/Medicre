@@ -1,30 +1,35 @@
+// login.js
 document.addEventListener("DOMContentLoaded", function () {
-  const loginForm = document.getElementById("loginForm");
-  const loginErrorBox = document.getElementById("loginErrorBox");
+  const form = document.getElementById("loginForm");
+  const email = document.getElementById("loginEmail");
+  const password = document.getElementById("loginPassword");
+  const errorBox = document.getElementById("loginErrorBox");
 
-  if (loginForm) {
-    loginForm.addEventListener("submit", function (event) {
-      let errors = [];
+  form.addEventListener("submit", function (e) {
+    let errors = [];
 
-      // Email validation
-      const email = document.getElementById("loginEmail").value.trim();
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-      if (!emailPattern.test(email)) {
-        errors.push("Please enter a valid email address.");
+    // Email validation
+    if (email.value.trim() === "") {
+      errors.push("Email is required.");
+    } else {
+      const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      if (!emailPattern.test(email.value.trim())) {
+        errors.push("Enter a valid email address.");
       }
+    }
 
-      // Password validation
-      const password = document.getElementById("loginPassword").value;
-      if (password.length < 6) {
-        errors.push("Password must be at least 6 characters.");
-      }
+    // Password validation
+    if (password.value.trim() === "") {
+      errors.push("Password is required.");
+    } else if (password.value.length < 6) {
+      errors.push("Password must be at least 6 characters.");
+    }
 
-      // Show errors if any
-      if (errors.length > 0) {
-        event.preventDefault(); // stop form submission
-        loginErrorBox.innerHTML = errors.join("<br>");
-        loginErrorBox.style.color = "red";
-      }
-    });
-  }
+    // Show errors if any
+    if (errors.length > 0) {
+      e.preventDefault(); // stop form submission
+      errorBox.innerHTML = errors.join("<br>");
+      errorBox.style.color = "red";
+    }
+  });
 });

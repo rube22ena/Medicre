@@ -71,37 +71,39 @@ if (!$data) {
     exit;
 }
 ?>
+<link rel="stylesheet" href="../includes/headerstyle.css">
+<link rel="stylesheet" href="../css/appointment-edit.css">
+<script src="../js/appointment-edit.js"></script>
 <h2>Edit Appointment</h2>
 <form method="post">
   <input type="hidden" name="update_id" value="<?= $data['appointment_id'] ?>">
 
-  <label>Your Name</label>
-  <input type="text" name="name" value="<?= htmlspecialchars($data['name']) ?>" required>
+  <label>Your Name</label><br>
+  <input type="text" name="name" value="<?= htmlspecialchars($data['name']) ?>" required><br>
 
-  <label>Gender</label>
+  <label>Gender</label><br><br>
   <select name="gender" required>
     <option value="Male" <?= $data['gender']=='Male'?'selected':'' ?>>Male</option>
     <option value="Female" <?= $data['gender']=='Female'?'selected':'' ?>>Female</option>
     <option value="Other" <?= $data['gender']=='Other'?'selected':'' ?>>Other</option>
-  </select>
+  </select><br>
 
-  <label>Age</label>
-  <input type="number" name="age" value="<?= $data['age'] ?>" required min="1" max="120">
+  <label>Age</label><br>
+  <input type="number" name="age" value="<?= $data['age'] ?>" required min="1" max="120"><br>
 
-  <label>Mobile Number</label>
-  <input type="text" name="mobile" value="<?= htmlspecialchars($data['mobile']) ?>" required>
+  <label>Mobile Number</label><br>
+  <input type="text" name="mobile" value="<?= htmlspecialchars($data['mobile']) ?>" required><br>
+  <label>Email</label><br>
+  <input type="email" name="email" value="<?= htmlspecialchars($data['email']) ?>" required><br>
 
-  <label>Email</label>
-  <input type="email" name="email" value="<?= htmlspecialchars($data['email']) ?>" required>
+  <label>Address</label><br>
+  <textarea name="address" rows="2" required><?= htmlspecialchars($data['address']) ?></textarea><br>
 
-  <label>Address</label>
-  <textarea name="address" rows="2" required><?= htmlspecialchars($data['address']) ?></textarea>
+  <label>Appointment Date</label><br>
+  <input type="date" name="appointment_date" value="<?= $data['appointment_date'] ?>" required><br>
 
-  <label>Appointment Date</label>
-  <input type="date" name="appointment_date" value="<?= $data['appointment_date'] ?>" required>
-
-  <label>Appointment Time</label>
-  <input type="time" name="appointment_time" value="<?= $data['appointment_time'] ?>" required>
+  <label>Appointment Time</label><br>
+  <input type="time" name="appointment_time" value="<?= $data['appointment_time'] ?>" required><br>
 
   <button type="submit">Update Appointment</button>
 </form>

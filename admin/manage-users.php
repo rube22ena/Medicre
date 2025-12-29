@@ -16,32 +16,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_user'])) {
     if ($name && filter_var($email, FILTER_VALIDATE_EMAIL) && strlen($pass) >= 6 
         && in_array($role, ['admin','doctor','receptionist'])) {
 
-        // Doctors must have specialization
-        if ($role === 'doctor' && !$specialization) {
-            $error = "Doctor must have a specialization";
-        } else {
-            // ✅ Handle photo upload only for doctors
-            if ($role === 'doctor' && isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
-             $targetDir = "../uploads/";
-                if (!is_dir($targetDir)) {
-                    mkdir($targetDir, 0777, true);
-                }
-                $photoFile = time() . "_" . basename($_FILES['photo']['name']);
-                move_uploaded_file($_FILES['photo']['tmp_name'], $targetDir . $photoFile);
-                $photoPath = $photoFile;
-            }
+        // Doctor-specific validation
+        if ($role === 'doctor') {
+            if (!$specialization) {
+                $error = "Doctor must have a specialization.";
+            } elseif (!isset($_FILES['photo']) || $_FILES['photo']['error'] !== UPLOAD_ERR_OK) {
+                $error = "Doctor must have a photo.";
+            } else {
+                // Validate photo type and size
+                $allowedTypes = ['image/jpeg','image/png','image/gif','image/webp'];
+                $fileType = mime_content_type($_FILES['photo']['tmp_name']);
+                $fileSize = $_FILES['photo']['size'];
 
+                if (!in_array($fileType, $allowedTypes)) {
+                    $error = "Only JPG, PNG, GIF, or WEBP images are allowed.";
+                } elseif ($fileSize > 2 * 1024 * 1024) {
+                    $error = "Image must be smaller than 2 MB.";
+                } else {
+                    $targetDir = "../uploads/";
+                    if (!is_dir($targetDir)) {
+                        mkdir($targetDir, 0777, true);
+                    }
+                    $photoFile = time() . "_" . basename($_FILES['photo']['name']);
+                    move_uploaded_file($_FILES['photo']['tmp_name'], $targetDir . $photoFile);
+                    $photoPath = $photoFile;
+                }
+            }
+        }
+
+        // Insert user if no error
+        if (!isset($error)) {
             $hash = password_hash($pass, PASSWORD_DEFAULT);
             $stmt = $pdo->prepare("INSERT INTO user (name,email,password_hash,role,specialization,photo) VALUES (?,?,?,?,?,?)");
             try {
                 $stmt->execute([$name,$email,$hash,$role,$specialization,$photoPath]);
                 $msg = "User created successfully!";
             } catch (PDOException $e) {
-                $error = "Email already exists";
+                $error = "Email already exists.";
             }
         }
     } else {  
-        $error = "Invalid input";  
+        $error = "Invalid input.";
     }
 }
 
@@ -49,8 +64,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_user'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
     $delete_id = (int)$_POST['delete_id'];
     if ($delete_id > 0) {
+        $stmt = $pdo->prepare("DELETE FROM doctor_schedule WHERE doctor_id=?");
+        $stmt->execute([$delete_id]);
+
         $stmt = $pdo->prepare("DELETE FROM user WHERE user_id=?");
         $stmt->execute([$delete_id]);
+
         $msg = "User deleted successfully!";
     }
 }
@@ -63,8 +82,12 @@ $staff = $pdo->query("SELECT user_id, name, email, role, specialization, photo
 ?>
 <link rel="stylesheet" href="../css/manage-user.css">
 <link rel="stylesheet" href="../includes/headerstyle.css">
+<script src="../js/manage-users.js"></script>
 
 <h2>Manage Staff Users</h2>
+
+<?php if(isset($msg))   echo "<p style='color:green;'>$msg</p>"; ?>
+<?php if(isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
 
 <form method="post" enctype="multipart/form-data">
   <input type="hidden" name="create_user" value="1">
@@ -118,17 +141,16 @@ function toggleSpecializationAndPhoto() {
     specField.style.display = 'block';
     photoField.style.display = 'block';
     specSelect.setAttribute('required','required');
+    document.querySelector("input[name='photo']").setAttribute('required','required');
   } else {
     specField.style.display = 'none';
     photoField.style.display = 'none';
     specSelect.removeAttribute('required');
     specSelect.value = '';
+    document.querySelector("input[name='photo']").removeAttribute('required');
   }
 }
 </script>
-
-<?php if(isset($msg))   echo "<p style='color:green;'>$msg</p>"; ?>
-<?php if(isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
 
 <h3>Existing Staff</h3>
 <table border="1" cellpadding="6">
@@ -152,16 +174,12 @@ function toggleSpecializationAndPhoto() {
         <?php if($s['photo']): ?>
           <img src="../uploads/<?= htmlspecialchars($s['photo']) ?>" 
                alt="Doctor Photo" style="width:80px;height:80px;border-radius:50%;">
-        <?php else: ?>
-          
         <?php endif; ?>
       </td>
       <td>
-        <!-- Delete button posts back to this same page -->
-        <form method="post" style="display:inline;" 
-              onsubmit="return confirm('Delete this user?');">
+        <form method="post" style="display:inline;" onsubmit="return confirm('Delete this user?');">
           <input type="hidden" name="delete_id" value="<?= $s['user_id'] ?>">
-          <button type="submit" style="background:#c62828;color:#fff;border:0;padding:5px 10px;border-radius:4px;">
+          <button type="submit" >
             Delete
           </button>
         </form>

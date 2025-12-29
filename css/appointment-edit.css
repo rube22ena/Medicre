@@ -1,0 +1,54 @@
+/* appointment-edit.css */
+form {
+  width: 420px;
+  margin: 20px auto;
+  padding: 25px;
+  background: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+form label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #0f9691;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border: 1px solid #0f9691;
+  box-shadow: 0 0 6px rgba(15,150,145,0.4);
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #0f9691;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #0c7a76;
+}

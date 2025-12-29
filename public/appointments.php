@@ -62,52 +62,55 @@ if ($selectedDate === date('Y-m-d')) {
 }
 
   ?>
-  <form method="post" action="appointments_save.php" class="appointments-form">
-    <input type="hidden" name="doctor_id" value="<?= (int) $doctor['user_id'] ?>">
-    <input type="hidden" name="department" value="<?= htmlspecialchars($doctor['specialization']) ?>">
+ <form method="post" action="appointments_save.php" class="appointments-form">
+  <input type="hidden" name="doctor_id" value="<?= (int) $doctor['user_id'] ?>">
+  <input type="hidden" name="department" value="<?= htmlspecialchars($doctor['specialization']) ?>">
 
-    <label>Your Name</label>
-    <input type="text" name="name" required>
+  <label>Your Name</label><br>
+  <input type="text" name="name" required><br><br>
 
-    <label>Gender</label>
-    <select name="gender" required>
-      <option value="">Select</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-      <option value="Other">Other</option>
-    </select>
+  <label>Gender</label><br>
+  <select name="gender" required>
+    <option value="">Select</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+  </select><br><br>
 
-    <label>Age</label>
-    <input type="number" name="age" required min="1" max="120">
+  <label>Age</label><br>
+  <input type="number" name="age" required min="1" max="120"><br><br>
 
-    <label>Mobile Number</label>
-    <input type="text" name="mobile" required>
+  <label>Mobile Number</label><br>
+  <input type="text" name="mobile" required><br><br>
 
-    <label>Email</label>
-    <input type="email" name="email" required>
+  <label>Email</label><br>
+  <input type="email" name="email" required><br><br>
 
-    <label>Address</label>
-    <textarea name="address" rows="2" required></textarea>
+  <label>Address</label><br>
+  <textarea name="address" rows="2" required></textarea><br><br>
 
-    <label>Appointment Date</label>
-    <input type="date" name="appointment_date" required min="<?= date('Y-m-d') ?>"
-      value="<?= htmlspecialchars($selectedDate) ?>"
-      onchange="location.href='appointments.php?doctor_id=<?= (int) $doctor['user_id'] ?>&appointment_date=' + this.value;">
+  <label>Appointment Date</label><br>
+  <input type="date" name="appointment_date" required min="<?= date('Y-m-d') ?>"
+    value="<?= htmlspecialchars($selectedDate) ?>"
+    onchange="location.href='appointments.php?doctor_id=<?= (int) $doctor['user_id'] ?>&appointment_date=' + this.value;">
 
-    <label>Appointment Time</label>
-    <?php if (empty($slots)): ?>
-      <p style="color:orange;">No available slots for this date. Please choose another date.</p>
-    <?php else: ?>
-      <select name="appointment_time" required>
-        <option value="">Select a time</option>
-        <?php foreach ($slots as $s): ?>
-          <option value="<?= $s ?>"><?= substr($s, 0, 5) ?></option>
-        <?php endforeach; ?>
-      </select>
-    <?php endif; ?>
+  <label>Appointment Time</label><br>
+  <?php if (empty($slots)): ?>
+    <p style="color:orange;">No available slots for this date. Please choose another date.</p><br>
+  <?php else: ?>
+    <select name="appointment_time" required>
+      <option value="">Select a time</option>
+      <?php foreach ($slots as $s): ?>
+        <option value="<?= $s ?>"><?= substr($s, 0, 5) ?></option>
+      <?php endforeach; ?>
+    </select><br><br>
+  <?php endif; ?>
 
-    <button type="submit" <?= empty($slots) ? 'disabled' : '' ?>>Book Consultation</button>
-  </form>
+  <button type="submit" <?= empty($slots) ? 'disabled' : '' ?>>Book Consultation</button>
+</form>
+
+<!-- ✅ Load JS after form -->
+<script src="../js/appointments.js"></script>
   <?php
 }
 
@@ -169,7 +172,11 @@ if ($rows) {
   echo "</table>";
 } else {
   echo "<p>You have no appointments yet.</p>";
-}
-
-include '../includes/footer.php';
+} 
 ?>
+ <link rel="stylesheet" href="../css/appointments.css">  
+  <link rel="stylesheet" href="../includes/headerstyle.css">
+
+<?php include '../includes/footer.php'; ?>
+
+ 

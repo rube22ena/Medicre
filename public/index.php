@@ -23,7 +23,6 @@
 </html>
 <body>
 
-
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0f9691;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"> <img src="pictures/logo-removebg-preview.png" alt="logo" height="50" width="50">
@@ -40,9 +39,11 @@
           <li class="nav-item active">
             <a class="nav-link" href="#about"onclick="showAbout()">ℹ️ About</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#contact" onclick="showContact(event)">📞 Contact Us</a>
-          </li>
+         
+            <li class="nav-item active">
+  <a class="nav-link" href="#site-footer">📞 Contact Us</a>
+</li>
+          
 
         </ul>
         <!-- <form class="d-flex">

@@ -19,7 +19,7 @@ if (!$doctor) {
 ?>
 
 <link rel="stylesheet" href="../css/doctor-profile.css">
-
+<link rel="stylesheet" href="../includes/headerstyle.css">
 <div class="doctor-profile">
   <div class="doctor-photo">
     <img src="../uploads/doctor_images/<?= htmlspecialchars($doctor['image'] ?? 'default.png') ?>" alt="Doctor">

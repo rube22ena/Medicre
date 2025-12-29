@@ -1,33 +1,41 @@
-// Wait until page loads
+// register.js
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("registerForm");
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
   const errorBox = document.getElementById("errorBox");
 
-  form.addEventListener("submit", function (event) {
+  form.addEventListener("submit", function (e) {
     let errors = [];
 
     // Name validation
-    const name = document.getElementById("name").value.trim();
-    if (name.length < 3) {
+    if (name.value.trim() === "") {
+      errors.push("Full Name is required.");
+    } else if (name.value.trim().length < 3) {
       errors.push("Name must be at least 3 characters.");
     }
 
-    // Email validation (basic check)
-    const email = document.getElementById("email").value.trim();
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!emailPattern.test(email)) {
-      errors.push("Please enter a valid email address.");
+    // Email validation
+    if (email.value.trim() === "") {
+      errors.push("Email is required.");
+    } else {
+      const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      if (!emailPattern.test(email.value.trim())) {
+        errors.push("Enter a valid email address.");
+      }
     }
 
     // Password validation
-    const password = document.getElementById("password").value;
-    if (password.length < 6) {
+    if (password.value.trim() === "") {
+      errors.push("Password is required.");
+    } else if (password.value.length < 6) {
       errors.push("Password must be at least 6 characters.");
     }
 
     // Show errors if any
     if (errors.length > 0) {
-      event.preventDefault(); // stop form from submitting
+      e.preventDefault(); // stop form submission
       errorBox.innerHTML = errors.join("<br>");
       errorBox.style.color = "red";
     }

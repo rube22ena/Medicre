@@ -2,7 +2,7 @@
 require_once '../includes/db-connect.php';
 require_once '../includes/auth.php';
 requireRole(['receptionist','admin','doctor']); // adjust roles as needed
-
+include '../includes/header.php';
 // Load all appointments with doctor + patient details
 $appts = $pdo->query("
     SELECT a.appointment_id, a.department, a.appointment_date, a.appointment_time, a.status,
@@ -15,8 +15,8 @@ $appts = $pdo->query("
 ")->fetchAll();
 ?>
 
-<link rel="stylesheet" href="../css/appointment.css">
-
+<link rel="stylesheet" href="../css/appointment-list.css"> 
+<link rel="stylesheet" href="../includes/headerstyle.css">
 <h2>Appointments List</h2>
 <table border="1" cellpadding="6">
   <tr>
@@ -58,3 +58,5 @@ $appts = $pdo->query("
     </tr>
   <?php endforeach; ?>
 </table>
+
+<?php include '../includes/footer.php'; ?>

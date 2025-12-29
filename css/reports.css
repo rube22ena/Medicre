@@ -61,7 +61,13 @@ table tr:hover {
   transition: background 0.3s;
 }
 
-/* Footer spacing */
+/* Footer spacing
 footer {
   margin-top: 40px;
+} */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
