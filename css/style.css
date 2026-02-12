@@ -26,8 +26,76 @@
 
 /* Hover effect */
  .nav-link.login-link:hover {
-  background-color: #fff;    /* white background */
+  background-color: #07524f;    /* white background */
    color: #0f9691;            /* text color matches navbar background */
    border: 1px solid #fff;    
  } 
- 
+ /* Centered header section */
+/* Centered header section */
+/* Centered header section */
+.hero-header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero-header h1 {
+  font-size: 36px;
+  color: #0f9691;
+  margin-bottom: 10px;
+}
+
+.hero-header p {
+  font-size: 20px;
+  color: #333;
+}
+
+/* Image left, text right */
+.hero {
+  display: flex;
+  justify-content: flex-start; /* image starts at left edge */
+  align-items: center;
+  gap: 50px;                   /* space between image and text */
+  padding: 50px 60px;          /* vertical spacing */
+  width: 100%;                 /* full width */
+  background: linear-gradient(135deg, #eafaf9, #ffffff);
+  
+}
+
+.hero-image img {
+  max-width: 450px;
+  width: 100%;
+  display: block;
+       margin-left: 80px;      /* space from left edge */
+}
+
+.hero-text {
+  flex: 1;                     /* take remaining space */
+  max-width: 600px;
+}
+
+.hero-text h3 {
+  color: #0f9691;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.btn-doctors {
+  display: inline-block;
+  background-color: #0f9691;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-doctors:hover {
+  background-color: #0c7a76;
+  transform: translateY(-3px);
+}

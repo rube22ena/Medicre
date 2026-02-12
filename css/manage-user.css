@@ -125,9 +125,3 @@ table tr:hover {
   background-color: #eafaf9;
   transition: background 0.3s;
 }
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}

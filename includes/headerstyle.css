@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between; /* logo left, nav right */
   align-items: center;
-  padding: 15px 30px;
+  padding: 20px 40px;
 }
 
 /* Logo + title */
@@ -15,11 +15,11 @@
 }
 
 .logo-title img {
-  margin-right: 10px;
+  margin-right: 12px;
 }
 
 .logo-title .brand {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   color: #fff;
   text-decoration: none;
@@ -36,7 +36,7 @@
   text-decoration: none;
   margin: 0 12px;
   font-weight: bold;
-  padding: 8px 14px;
+  padding: 10px 16px;
   border-radius: 6px;
   transition: background 0.3s, transform 0.2s;
 }
@@ -66,7 +66,7 @@ main {
   background-color: #0f9691;
   color: #fff;
   text-align: center;
-  padding: 20px 0;
+  padding: 25px 0;
 }
 .footer a, .footer span, .footer h5, .footer li {
   color: #fff;               /* ensure text is white */

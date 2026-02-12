@@ -1,12 +1,14 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
   <title>Medicre Hospital System - Home</title>
-  <link rel="stylesheet" href="../css/style.css">
+
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/Style.css">
+  <link rel="stylesheet" href="../css/Categories.css">
 </head>
 <style>
   .carousel-item img {
@@ -14,13 +16,14 @@
     height: 400px;
     object-fit: cover;
   }
-
- 
-
 </style>
 <script src="js/script.js"></script>
+
+
 </body>
+
 </html>
+
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0f9691;">
@@ -37,13 +40,16 @@
             <a class="nav-link active" aria-current="page" href="index.php">🏠Home</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#about"onclick="showAbout()">ℹ️ About</a>
+            <a class="nav-link" href="#about" onclick="showAbout()">ℹ️ About</a>
           </li>
-         
-            <li class="nav-item active">
-  <a class="nav-link" href="#site-footer">📞 Contact Us</a>
-</li>
-          
+          <li class="nav-item active">
+            <a class="nav-link" href="#categories" onclick="showcategories()">Categories</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="#site-footer">📞 Contact Us</a>
+          </li>
+
 
         </ul>
         <!-- <form class="d-flex">
@@ -51,8 +57,8 @@
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form> -->
         <div class="nav-item">
-         <a class="nav-link login-link" href="http://localhost/MEDICREPROJECT/Medicre/public/login.php"> Login</a>
-       
+          <a class="nav-link login-link" href="http://localhost/MEDICREPROJECT/Medicre/public/login.php"> Login</a>
+
         </div>
       </div>
     </div>
@@ -104,120 +110,134 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-  <section id="about"style="display:non;">
-     <div class="container my-4">
+  <section id="categories" style="display:non;">
+ <div class="categories-section">
+  <div class="categories-header">
+    <h2>Categories</h2>
+  </div>
 
-    <div class="row mb-2">
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary-emphasis">Medicre</strong>
-            <h3 class="mb-0">Medical Records</h3>
-            <div class="mb-1 text-body-secondary">Dec 12</div>
-            <p class="card-text mb-auto">Patient records are safely kept in the cloud, making it easy to see medical
-              history, important details like blood group or allergies, and lab reports.</p>
-            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-              Continue reading
-              <svg class="bi" aria-hidden="true">
-                <use xlink:href="#chevron-right"></use>
-              </svg> </a>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <img class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img" width="200"
-              src="http://localhost/MEDICREPROJECT/Medicre/uploads/medical-record-logo-.png" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-success-emphasis">Medicre</strong>
-            <h3 class="mb-0">Appointments</h3>
-            <div class="mb-1 text-body-secondary">Dec 11</div>
-            <p class="mb-auto">We’ve made life easier for patients and doctors. Now patients can instantly book
-              appointments with the top doctors and avoid having to stand in long queues.</p>
-            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-              Continue reading
-              <svg class="bi" aria-hidden="true">
-                <use xlink:href="#chevron-right"></use>
-              </svg> </a>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <img class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img" width="200"
-              src="http://localhost/MEDICREPROJECT/Medicre/uploads/appointmnent.png"
-              alt="">
-          </div>
-        </div>
-      </div>
+  <div class="categories-row">
+    <div class="category">
+      <img src="pictures\dermathology.png" alt="Dermatology Icon">
+      <span>Dermatology</span>
     </div>
+    <div class="category">
+      <img src="pictures/medicine.png" alt="Medicine Icon">
+      <span>Medicine</span>
     </div>
-  </section>
-  </div>
-  <div class="container my-4">
-    <div class="row mb-2">
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary-emphasis">Medicre</strong>
-            <h3 class="mb-0">Lab Reports</h3>
-            <div class="mb-1 text-body-secondary">Dec 12</div>
-            <p class="card-text mb-auto">Patients can quickly view their lab test results online, making it easier to track health records without delays or paperwork.</p>
-            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-              Continue reading
-              <svg class="bi" aria-hidden="true">
-                <use xlink:href="#chevron-right"></use>
-              </svg> </a>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <img class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img" width="200"
-              src="http://localhost/MEDICREPROJECT/Medicre/uploads/medical%20lab.png" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-success-emphasis">Medicre</strong>
-            <h3 class="mb-0">Doctors & Staff</h3>
-            <div class="mb-1 text-body-secondary">Dec 11</div>
-            <p class="mb-auto">Profiles of doctors and hospital staff are available with their specialties and schedules, helping patients connect with the right medical professionals easily.</p>
-            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
-              Continue reading
-              <svg class="bi" aria-hidden="true">
-                <use xlink:href="#chevron-right"></use>
-              </svg> </a>
-          </div>
-          <div class="col-auto d-none d-lg-block">
-            <img class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img" width="200"
-              src="http://localhost/MEDICREPROJECT/Medicre/uploads/doctor%20and%20staff.png"
-              alt="">
-          </div>
-        </div>
-      </div>
+    <div class="category">
+      <img src="pictures/dental.png" alt="Dental Icon">
+      <span>Dental</span>
+    </div>
+    <div class="category">
+      <img src="pictures/brain.png" alt="Brain Icon">
+      <span>Brain</span>
+    </div>
+    <div class="category">
+      <img src="pictures/orthopedic.png" alt="Orthopedic Icon">
+      <span>Orthopedic</span>
+    </div>
+    <div class="category">
+      <img src="pictures/ophthalmology.png" alt="Ophthalmology Icon">
+      <span>Ophthalmology</span>
+    </div>
+    <div class="category">
+      <img src="pictures\research_observation_pathology_laboratory.png" alt="Laboratory Icon">
+      <span>Laboratory</span>
     </div>
   </div>
-<footer id="site-footer"  style="background-color: #0f9691;" text-white pt-4 pb-3>
-  <div class="container">
-    <div class="row">
-      <!-- Left: Branding and Award -->
-      <div class="col-md-6 mb-3">
-       <a class="navbar-brand" href="#"> <img src="pictures/logo-removebg-preview.png" alt="logo" height="50" width="50">
-        <span>Medicre Hospital System</span></a>
-       
-      </div>
+</div>
+</section>
+  <main>
+    <!-- Centered header text -->
+    <section class="hero-header">
+      <h1>For Hospitals, Clinics, Doctors and Patients</h1>
+      <p> Medicre is built for Everyone.</p>
+    </section>
 
-      <!-- Right: Contact Info -->
-      <div class="col-md-6">
-        <h5>Contact Us</h5>
-        <ul class="list-unstyled">
-          <li><strong>Address:</strong>  Kathmandu,Nepal</li>
-          <li><strong>Email:</strong> info@Medicre.org | Medicrenepal@gmail.com</li>
-          <li><strong>Phone:</strong> +977-9800000008 | +977-9888989898</li>
-        </ul>
+    <!-- Image left, text right -->
+    <section class="hero">
+      <div class="hero-image">
+        <img src="http://localhost/MEDICREPROJECT/Medicre/uploads/indexdoctor.png" alt="Doctor illustration">
+      </div>
+      <div class="hero-text">
+        <h3>✨ Experience No Wait Times</h3>
+        <p>Instant appointment with Doctors. Patients can instantly book appointments with top doctors and avoid long
+          queues. Telemedicine service is also available.</p>
+        <a href="doctor_list.php" class="btn-doctors">👨‍⚕️ Our Doctors</a>
+      </div>
+    </section>
+  </main>
+ <section id="promo">
+  <div class="promo-container">
+    
+    <!-- Left Side: Text -->
+    <div class="promo-text">
+      <h2>CONVENIENCE FOR PATIENTS</h2>
+      <h3>Convenient Lab Testing</h3>
+      <p>
+        Patients can now view their lab test results online with ease. Instead of waiting in long lines or handling piles of paperwork, reports are available instantly through a secure system. This makes it simple to track health records, share results with doctors, and stay informed about important details. With everything stored safely in one place, patients feel more confident and connected to their healthcare journey.
+      </p>
+      
+     
+    </div>
+
+    <!-- Right Side: Illustration + Icons -->
+    <div class="promo-illustration">
+      <img src="http://localhost/MEDICREPROJECT/Medicre/uploads/medicaltesting.png" alt="App Promo" class="promo-image">
+      
+    </div>
+
+  </div>
+</section>
+ <section id="records">
+  <div class="records-container">
+    
+    <!-- Left Side: Illustration -->
+    <div class="records-illustration">
+      <img src="http://localhost/MEDICREPROJECT/Medicre/uploads/health-record.png" alt="Patient Records" class="records-image">
+    </div>
+
+    <!-- Right Side: Text -->
+    <div class="records-text">
+      <h2>ORGANIZE YOUR RECORDS</h2>
+      <h3>Better Patient Records</h3>
+      <ul>
+        <li>✓ View Patient History</li>
+        <li>✓ Records safely stored in the Cloud</li>
+        <li>✓ Store details like Blood Group, Allergies, BMI, Chronic Ailments</li>
+        <li>✓ Easy access to Lab Test Reports</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+  
+  
+
+  <footer id="site-footer" style="background-color: #0f9691;" text-white pt-4 pb-3>
+    <div class="container">
+      <div class="row">
+        <!-- Left: Branding and Award -->
+        <div class="col-md-6 mb-3">
+          <a class="navbar-brand" href="#"> <img src="pictures/logo-removebg-preview.png" alt="logo" height="50"
+              width="50">
+            <span>Medicre Hospital System</span></a>
+
+        </div>
+
+        <!-- Right: Contact Info -->
+        <div class="col-md-6">
+          <h5>Contact Us</h5>
+          <ul class="list-unstyled">
+            <li><strong>Address:</strong> Kathmandu,Nepal</li>
+            <li><strong>Email:</strong> info@Medicre.org | Medicrenepal@gmail.com</li>
+            <li><strong>Phone:</strong> +977-9800000008 | +977-9888989898</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 
 
@@ -225,11 +245,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
-    
+
 
 </body>
 
 </html>
-
-
-

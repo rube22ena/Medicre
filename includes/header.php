@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/auth.php';
 ?>
-<link rel="stylesheet" href="/MedicreProject/Medicre/css/headerstyle.css">
+<link rel="stylesheet" href="/MedicreProject/Medicre/includes/headerstyle.css">
 
 <header class="topbar">
   <div class="logo-title">
