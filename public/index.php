@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/Style.css">
-  <link rel="stylesheet" href="../css/Categories.css">
+  <link rel="stylesheet" href="../css/categories.css">
 </head>
 <style>
   .carousel-item img {
@@ -26,7 +26,7 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0f9691;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0f9691; height: 100px;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"> <img src="pictures/logo-removebg-preview.png" alt="logo" height="50" width="50">
         <span>Medicre Hospital System</span></a>
@@ -52,10 +52,7 @@
 
 
         </ul>
-        <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
+      
         <div class="nav-item">
           <a class="nav-link login-link" href="http://localhost/MEDICREPROJECT/Medicre/public/login.php"> Login</a>
 
@@ -72,7 +69,7 @@
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
         aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner">
+    <div class="carousel-inner" >
       <div class="carousel-item active">
         <img
           src="https://images.unsplash.com/photo-1758691463606-1493d79cc577?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

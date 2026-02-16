@@ -12,9 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($user && password_verify($pass, $user['password_hash'])) {
     session_start();
+    session_regenerate_id(true); // prevent session fixation
+
     $_SESSION['user_id'] = $user['user_id'];
-    $_SESSION['role'] = $user['role'];
-    $_SESSION['name'] = $user['name'];
+    $_SESSION['role']    = $user['role'];
+    $_SESSION['name']    = $user['name'];
+
+    
 
     // Redirect based on role
     if ($user['role'] === 'doctor') {

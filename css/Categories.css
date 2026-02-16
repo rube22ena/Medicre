@@ -1,199 +1,276 @@
+
+
+/* Main container for categories section */
 .categories-section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 30px;
+  max-width: 1200px;          /* wider for modern layout */
+  margin: auto;               /* center horizontally */
+  padding: 50px 30px;         /* generous spacing for breathing room */
+  background: #f9f9f9;        /* subtle background for contrast */
+  border-radius: 12px;        /* rounded corners for modern look */
 }
 
+/* Section header (title) */
 .categories-header h2 {
-  
- 
-  margin-bottom: 30px;
-  text-align: center; /* centers the heading */
-  font-size: 36px;
-  color: #0f9691;
-  
+  margin-bottom: 40px;        /* spacing below heading */
+  text-align: center;         /* center align heading */
+  font-size: 40px;            /* large, bold heading */
+  font-weight: 700;           /* strong emphasis */
+  color: #0f9691;             /* hospital theme color */
+  letter-spacing: 1px;        /* slight spacing for elegance */
+  position: relative;         /* allows decorative underline */
 }
 
+/* Decorative underline below heading */
+.categories-header h2::after {
+  content: "";
+  display: block;
+  width: 80px;                /* underline width */
+  height: 4px;                /* underline thickness */
+  background: #0f9691;        /* same theme color */
+  margin: 12px auto 0;        /* center underline */
+  border-radius: 2px;         /* rounded edges */
+}
+
+/* ================================
+   Categories Row (scrollable cards)
+   ================================ */
 .categories-row {
-  display: flex;
-  justify-content: flex-start; /* start from left side */
-  gap: 40px;                   /* spacing between cards */
-  overflow-x: auto;             /* allows scrolling if too many categories */
-  padding-bottom: 10px;
+  display: flex;              /* flex layout for cards */
+  justify-content: flex-start;/* align cards from left */
+  gap: 30px;                  /* spacing between cards */
+  overflow-x: auto;           /* horizontal scroll if too many */
+  padding-bottom: 15px;       /* spacing below row */
+  scrollbar-width: thin;      /* thin scrollbar (Firefox) */
+  scrollbar-color: #0f9691 #e0e0e0; /* scrollbar colors */
 }
 
+/* Custom scrollbar for Chrome/Edge */
+.categories-row::-webkit-scrollbar {
+  height: 8px;                /* scrollbar thickness */
+}
+.categories-row::-webkit-scrollbar-track {
+  background: #e0e0e0;        /* track color */
+  border-radius: 10px;        /* rounded track */
+}
+.categories-row::-webkit-scrollbar-thumb {
+  background: #0f9691;        /* thumb color */
+  border-radius: 10px;        /* rounded thumb */
+}
+
+/* ================================
+   Category Card Styling
+   ================================ */
 .category {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: center;
-  padding: 25px;
-  width: 150px; /* fixed width for neat alignment */
-  flex: 0 0 auto; /* prevents shrinking, keeps them in line */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  background: #fff;           /* white card background */
+  border-radius: 14px;        /* rounded corners */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1); /* soft shadow */
+  text-align: center;         /* center content */
+  padding: 30px 20px;         /* inner spacing */
+  width: 180px;               /* fixed width for uniformity */
+  flex: 0 0 auto;             /* prevents shrinking */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover */
+  cursor: pointer;            /* pointer cursor on hover */
+  border: 2px solid transparent; /* border highlight on hover */
 }
 
+/* Hover effect for card */
 .category:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-}
-.category img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 15px;
+  transform: translateY(-8px); /* lift effect */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* stronger shadow */
+  border-color: #0f9691;       /* highlight border */
 }
 
+/* Category image */
+.category img {
+  width: 90px;                /* image size */
+  height: 90px;
+  object-fit: contain;        /* keep aspect ratio */
+  margin-bottom: 18px;        /* spacing below image */
+  transition: transform 0.3s ease; /* smooth zoom */
+}
+
+/* Image zoom on hover */
+.category:hover img {
+  transform: scale(1.1);      /* zoom effect */
+}
+
+/* Category text */
 .category span {
   display: block;
-  font-size: 14px;
-  font-weight: 600;
-  color: #444;
-}/* Section Container */
+  font-size: 16px;            /* readable text size */
+  font-weight: 600;           /* bold text */
+  color: #333;                /* dark gray for readability */
+  letter-spacing: 0.5px;      /* slight spacing */
+}
+/* ================================
+   Promo Section Styling
+   ================================ */
+
+/* Main promo section container */
 #promo {
-  background: #f9f9f9;
-  padding: 70px 40px;
+  background: #f9f9f9;        /* light background for contrast */
+  padding: 70px 40px;         /* generous spacing around content */
 }
 
+/* Flex container for text + image */
 .promo-container {
-  display: flex;
-  align-items: flex-start;   /* align text and image at the top */
-  justify-content: flex-end; /* push content toward the right side */
+  display: flex;              /* side-by-side layout */
+  align-items: flex-start;    /* align items at the top */
+  justify-content: flex-end;  /* push content toward right side */
   width: 100%;
-  gap: 80px;                 /* controlled spacing between text and image */
+  gap: 80px;                  /* spacing between text and image */
 }
 
-/* Text Section */
+/* ================================
+   Text Section
+   ================================ */
 .promo-text {
-  flex: 0 0 500px;           /* fixed width so text stays near image */
-  text-align: left;  
-   margin-right: 20px;          
+  flex: 0 0 500px;            /* fixed width for text block */
+  text-align: left;           /* left-aligned text */
+  margin-right: 20px;         /* spacing between text and image */
 }
 
 .promo-text h2 {
-  font-size: 34px;
-  font-weight: 800;
-  color: #222;
+  font-size: 34px;            /* large headline */
+  font-weight: 800;           /* bold emphasis */
+  color: #222;                /* dark gray for readability */
   margin-bottom: 10px;
 }
 
 .promo-text h3 {
-  font-size: 22px;
-  color: #0077b6;
+  font-size: 22px;            /* subheading size */
+  color: #0077b6;             /* accent color (blue) */
   margin-bottom: 15px;
 }
 
 .promo-text p {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #444;
+  font-size: 18px;            /* body text size */
+  line-height: 1.7;           /* comfortable line spacing */
+  color: #212121;             /* dark gray text */
   margin-bottom: 15px;
 }
 
-/* Illustration Section */
+/* ================================
+   Illustration Section
+   ================================ */
 .promo-illustration {
-  flex: 0 0 auto;            /* image does not stretch */
-   margin-right: 80px;         /* vertical spacing around image */
+  flex: 0 0 auto;             /* image does not stretch */
+  margin-right: 190px;        /* spacing around image */
 }
 
 .promo-image {
-  width: 360px;
-  display: block;            /* removes inline spacing */
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 360px;               /* fixed image width */
+  display: block;             /* removes inline spacing */
+  border-radius: 12px;        /* rounded corners */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover */
 }
 
+/* Hover effect for image */
 .promo-image:hover {
-  transform: scale(1.06);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  transform: scale(1.06);     /* zoom effect */
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25); /* stronger shadow */
 }
 
-/* Responsive */
+/* ================================
+   Responsive Design
+   ================================ */
 @media (max-width: 768px) {
   .promo-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
+    flex-direction: column;   /* stack text and image vertically */
+    text-align: center;       /* center align for mobile */
+    gap: 20px;                /* smaller spacing */
   }
   .promo-illustration {
-    text-align: center;
-    margin-top: 20px;
+    text-align: center;       /* center image */
+    margin-top: 20px;         /* spacing above image */
   }
 }
 /* Section Container */
+/* ================================
+   Records Section Styling
+   ================================ */
+
+/* Main records section container */
 #records {
-  background: #f9f9f9;
-  padding: 80px 40px; /* bigger spacing for a bold look */
+  background: #f9f9f9;        /* light background for contrast */
+  padding: 80px 40px;         /* bigger spacing for bold look */
 }
 
+/* Flex container for image + text */
 .records-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* content starts from left edge */
-  width: 100%;                 /* full width */
-  gap: 50px;                   /* controlled spacing between image and text */
+  display: flex;              /* side-by-side layout */
+  align-items: center;        /* vertically center items */
+  justify-content: flex-start;/* content starts from left edge */
+  width: 100%;                /* full width */
+  gap: 50px;                  /* spacing between image and text */
 }
 
-/* Illustration Section */
+/* ================================
+   Illustration Section
+   ================================ */
 .records-illustration {
-  flex: 0 0 auto;   /* image does not stretch */
-  margin-left: 80px;
+  flex: 0 0 auto;             /* image does not stretch */
+  margin-left: 160px;         /* spacing from left edge */
 }
 
 .records-image {
-  width: 420px;     /* larger image for more impact */
-  border-radius: 16px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 420px;               /* larger image for impact */
+  border-radius: 16px;        /* rounded corners */
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15); /* soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover */
 }
 
+/* Hover effect for image */
 .records-image:hover {
-  transform: scale(1.08);
-  box-shadow: 0 14px 32px rgba(0,0,0,0.25);
+  transform: scale(1.08);     /* zoom effect */
+  box-shadow: 0 14px 32px rgba(0,0,0,0.25); /* stronger shadow */
 }
 
-/* Text Section */
+/* ================================
+   Text Section
+   ================================ */
 .records-text {
-  flex: 1; /* text fills remaining space */
+  flex: 1;                    /* text fills remaining space */
 }
 
 .records-text h2 {
-  font-size: 34px;
-  font-weight: 700;
-  color: #222;
+  font-size: 34px;            /* main heading size */
+  font-weight: 700;           /* bold emphasis */
+  color: #1b1b1b;             /* dark gray for readability */
   margin-bottom: 12px;
 }
 
 .records-text h3 {
-  font-size: 24px;
-  color: #0f9691;
+  font-size: 24px;            /* subheading size */
+  color: #0f9691;             /* hospital theme color */
   margin-bottom: 24px;
 }
 
 .records-text ul {
-  list-style: none;
+  list-style: none;           /* remove default bullets */
   padding: 0;
 }
 
 .records-text li {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #444;
-  margin-bottom: 12px;
+  font-size: 18px;            /* list item size */
+  line-height: 1.8;           /* comfortable spacing */
+  color: #444;                /* medium gray text */
+  margin-bottom: 12px;        /* spacing between items */
 }
 
-/* Responsive */
+/* ================================
+   Responsive Design
+   ================================ */
 @media (max-width: 768px) {
   .records-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
+    flex-direction: column;   /* stack text and image vertically */
+    text-align: center;       /* center align for mobile */
+    gap: 30px;                /* smaller spacing */
   }
   .records-illustration {
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: center;       /* center image */
+    margin-bottom: 20px;      /* spacing below image */
   }
 }
 /* Footer Styling */

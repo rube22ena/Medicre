@@ -33,69 +33,83 @@
  /* Centered header section */
 /* Centered header section */
 /* Centered header section */
+/* ================================
+   Hero Section Styling
+   ================================ */
+
+/* Header text above hero (optional intro) */
 .hero-header {
-  text-align: center;
-  padding: 40px 20px;
+  text-align: center;         /* center align heading + paragraph */
+  padding: 40px 20px;         /* spacing around header */
 }
 
 .hero-header h1 {
-  font-size: 36px;
-  color: #0f9691;
+  font-size: 36px;            /* main heading size */
+  color: #0f9691;             /* hospital theme color */
   margin-bottom: 10px;
 }
 
 .hero-header p {
-  font-size: 20px;
-  color: #333;
+  font-size: 20px;            /* subheading size */
+  color: #333;                /* dark gray for readability */
 }
 
-/* Image left, text right */
+/* ================================
+   Hero Layout (image left, text right)
+   ================================ */
 .hero {
-  display: flex;
-  justify-content: flex-start; /* image starts at left edge */
-  align-items: center;
-  gap: 50px;                   /* space between image and text */
-  padding: 50px 60px;          /* vertical spacing */
-  width: 100%;                 /* full width */
-  background: linear-gradient(135deg, #eafaf9, #ffffff);
-  
+  display: flex;              /* side-by-side layout */
+  justify-content: flex-start;/* image starts at left edge */
+  align-items: center;        /* vertically center items */
+  gap: 90px;                  /* spacing between image and text */
+  padding: 50px 60px;         /* spacing inside hero section */
+  width: 100%;                /* full width */
+  background: linear-gradient(135deg, #eafaf9, #ffffff); /* soft gradient background */
 }
 
+/* Hero image styling */
 .hero-image img {
-  max-width: 450px;
-  width: 100%;
-  display: block;
-       margin-left: 80px;      /* space from left edge */
+  max-width: 450px;           /* maximum image width */
+  width: 100%;                /* responsive scaling */
+  display: block;             /* removes inline spacing */
+  margin-left: 80px;          /* spacing from left edge */
 }
 
+/* ================================
+   Hero Text Section
+   ================================ */
 .hero-text {
-  flex: 1;                     /* take remaining space */
-  max-width: 600px;
+  flex: 1;                    /* text fills remaining space */
+  max-width: 600px;           /* limit text width for readability */
 }
 
 .hero-text h3 {
-  color: #0f9691;
+  color: #0f9691;             /* accent color for subheading */
   margin-bottom: 15px;
 }
 
 .hero-text p {
-  font-size: 18px;
+  font-size: 18px;            /* body text size */
   margin-bottom: 20px;
-  color: #333;
+  color: #333;                /* dark gray text */
 }
 
+/* ================================
+   Call-to-Action Button
+   ================================ */
 .btn-doctors {
-  display: inline-block;
-  background-color: #0f9691;
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
+  display: inline-block;      /* inline but allows padding */
+  background-color: #0f9691;  /* hospital theme color */
+  color: #fff;                /* white text */
+  padding: 12px 24px;         /* button size */
+  border-radius: 8px;         /* rounded corners */
+  text-decoration: none;      /* remove underline */
+  font-weight: bold;          /* bold text */
+  transition: background 0.3s, transform 0.2s; /* smooth hover */
 }
 
+/* Hover effect for button */
 .btn-doctors:hover {
-  background-color: #0c7a76;
-  transform: translateY(-3px);
+  background-color: #0c7a76;  /* darker shade on hover */
+  transform: translateY(-3px); /* lift effect */
 }

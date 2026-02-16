@@ -109,18 +109,23 @@ $staff = $pdo->query("SELECT user_id, name, email, role, specialization, photo
     <option value="receptionist">Receptionist</option>
   </select><br><br>
 
-  <!-- Specialization field only for doctors -->
-  <div id="specializationField" style="display:none;">
-    <label>Specialization</label><br>
-    <select name="specialization" id="specializationSelect">
-      <option value="">Select Specialization</option>
-      <option value="Cardiology">Cardiology</option>
-      <option value="Neurology">Neurology</option>
-      <option value="Orthopedics">Orthopedics</option>
-      <option value="General">General</option>
-    </select><br><br>
-  </div>
-
+  
+  <!-- Dropdown for common specializations -->
+ <div id="specializationField" style="display:none;">
+  <label>Specialization</label><br>
+  <input list="specializations" name="specialization" placeholder="Choose or type specialization" required>
+  <datalist id="specializations">
+    <option value="Cardiology">
+    <option value="Neurology">
+    <option value="Orthopedics">
+    <option value="General">
+    <option value="Dermatology">
+    <option value="Psychiatry">
+    <option value="Dentist">
+    <option value="Ophthalmology">
+  </datalist>
+  <br><br>
+</div>
   <!-- Photo upload only for doctors -->
   <div id="photoField" style="display:none;">
     <label>Photo</label><br>
@@ -177,15 +182,15 @@ function toggleSpecializationAndPhoto() {
         <?php endif; ?>
       </td>
       <td>
-        <form method="post" style="display:inline;" onsubmit="return confirm('Delete this user?');">
-          <input type="hidden" name="delete_id" value="<?= $s['user_id'] ?>">
-          <button type="submit" >
-            Delete
-          </button>
-        </form>
+        <?php if($s['role'] !== 'admin'): ?>
+          <form method="post" style="display:inline;" onsubmit="return confirm('Delete this user?');">
+            <input type="hidden" name="delete_id" value="<?= $s['user_id'] ?>">
+            <button type="submit">Delete</button>
+          </form>
+        <?php else: ?>
+          <span style="color:gray;"></span>
+        <?php endif; ?>
       </td>
     </tr>
   <?php endforeach; ?>
 </table>
-
-<?php include '../includes/footer.php'; ?>
