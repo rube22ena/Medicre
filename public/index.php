@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -54,9 +57,14 @@
         </ul>
       
         <div class="nav-item">
-          <a class="nav-link login-link" href="http://localhost/MEDICREPROJECT/Medicre/public/login.php"> Login</a>
-
-        </div>
+  <?php if (isset($_SESSION['user_id'])): ?>
+    <!-- If logged in, show Logout instead -->
+    <a class="nav-link login-link" href="http://localhost/MEDICREPROJECT/Medicre/public/logout.php">Logout</a>
+  <?php else: ?>
+    <!-- If not logged in, show Login -->
+    <a class="nav-link login-link" href="http://localhost/MEDICREPROJECT/Medicre/public/login.php">Login</a>
+  <?php endif; ?>
+</div>
       </div>
     </div>
   </nav>
@@ -165,6 +173,9 @@
       </div>
     </section>
   </main>
+ <section id="about" style="display:non;">
+  
+    
  <section id="promo">
   <div class="promo-container">
     
@@ -208,6 +219,7 @@
     </div>
 
   </div>
+</section>
 </section>
   
   

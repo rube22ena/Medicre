@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 
     // Redirect based on role
+    
     if ($user['role'] === 'doctor') {
       header('Location: doctor_dashboard.php');
     } elseif ($user['role'] === 'receptionist') {
@@ -53,12 +54,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button type="submit">Login</button>
     <div class="links">
       <!-- <a href="#">Forgot Password?</a> -->
-      <a href="http://localhost/MEDICREPROJECT/Medicre/public/register.php">Create an Account</a>
+      <a href="http://localhost/MEDICREPROJECT/Medicre/public/register.php">Create an Account</a><br><br>
+      <a href="http://localhost/MEDICREPROJECT/Medicre/password/forgot_password.php">Forgot Password?</a>
     </div>
   </form>
+  <?php if (isset($_GET['reset']) && $_GET['reset'] === 'success') {
+    echo "<p class='success-message'>Password updated successfully. Please login.</p>";
+} ?>
   <div id="loginErrorBox"></div>
   <?php if (isset($error))
     echo "<p class='error-message'>$error</p>"; ?>
+    
 </div>
 
 <script src="../js/Login.js"></script>

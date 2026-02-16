@@ -1,19 +1,17 @@
 function showAbout(event) {
-  // stop the link from jumping to the top
   event.preventDefault();
-
-  // hide all sections
-  document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
-
-  // show About section
+  document.querySelectorAll("body > section").forEach(sec => sec.style.display = "none");
   document.getElementById("about").style.display = "block";
 }
+
+function showcategories(event) {
+  event.preventDefault();
+  document.querySelectorAll("body > section").forEach(sec => sec.style.display = "none");
+  document.getElementById("categories").style.display = "block";
+}
+
 function showContact(event) {
   event.preventDefault();
-
-  // hide all sections
-  document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
-
-  // show Contact section (footer)
+  document.querySelectorAll("body > section").forEach(sec => sec.style.display = "none");
   document.getElementById("contact").style.display = "block";
 }
