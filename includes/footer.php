@@ -4,7 +4,7 @@
       <div class="row">
         <!-- Left: Branding and Award -->
         <div class="col-md-6 mb-3">
-          <a class="navbar-brand" href="#"> <img src="pictures/logo-removebg-preview.png" alt="logo" height="50"
+          <a class="navbar-brand" href="#"> <img src="/MedicreProject/Medicre/public/pictures/logo-removebg-preview.png" alt="logo" height="50"
               width="50">
             <span>Medicre Hospital System</span></a>
 

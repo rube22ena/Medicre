@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     <link rel="stylesheet" href="../includes/headerstyle.css">
-    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/Register.css">
 
     <div class="register-box">
       <h2>Register (Patient)</h2>

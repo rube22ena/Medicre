@@ -52,3 +52,10 @@ form button {
 form button:hover {
   background: #0c7a76;
 }
+footer {
+  background: #0f9691;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  margin-top: auto;          /* ensures footer stays at bottom */
+}

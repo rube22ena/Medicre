@@ -108,3 +108,10 @@ body {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+footer {
+  background: #0f9691;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  margin-top: auto;          /* ensures footer stays at bottom */
+}

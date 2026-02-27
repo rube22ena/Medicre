@@ -165,3 +165,10 @@ table a button {
 table a button:hover {
   background: #3d8c40;
 }
+footer {
+  background: #0f9691;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  margin-top: auto;          /* ensures footer stays at bottom */
+}

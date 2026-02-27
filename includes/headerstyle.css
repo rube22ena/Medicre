@@ -1,14 +1,17 @@
-/* Top bar container */
+/* Topbar */
 .topbar {
   background-color: #0f9691;
-  color: #fff;
   display: flex;
-  justify-content: space-between; /* logo left, nav right */
+  justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 70px;          /* ensures consistent height */
 }
 
-/* Logo + title */
+/* Logo + Title */
 .logo-title {
   display: flex;
   align-items: center;
@@ -18,48 +21,48 @@
   margin-right: 12px;
 }
 
-.logo-title .brand {
-  font-size: 28px;
-  font-weight: bold;
+.brand {
   color: #fff;
+  font-size: 24px;           /* slightly larger for visibility */
+  font-weight: bold;
   text-decoration: none;
-  transition: color 0.3s;
+  letter-spacing: 0.5px;
 }
 
-.logo-title .brand:hover {
-  color: #eafaf9;
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
 }
 
-/* Navigation links */
 .nav-links a {
   color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 20px;
   text-decoration: none;
-  margin: 0 12px;
-  font-weight: bold;
-  padding: 10px 16px;
-  border-radius: 6px;
-  transition: background 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
+  padding: 6px 10px;         /* adds clickable area */
+  border-radius: 4px;
 }
 
 .nav-links a:hover {
-  background-color: #fff;
-  color: #0f9691;
-  transform: scale(1.05);
-}
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-html, body {
-  height: 100%;              /* full viewport height */
-  margin: 0;
-  display: flex;
-  flex-direction: column;    /* stack header, main, footer vertically */
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #f0f0f0;
+  text-decoration: none;
 }
 
-main {
-  flex: 1;                   /* pushes footer down */
+/* Body Reset */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+/* Prevent header shrinking */
+header.topbar {
+  flex-shrink: 0;            /* keeps header size fixed */
 }
 
 .footer {

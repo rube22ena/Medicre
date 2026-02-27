@@ -125,3 +125,10 @@ table tr:hover {
   background-color: #eafaf9;
   transition: background 0.3s;
 }
+footer {
+  background: #0f9691;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  margin-top: auto;          /* ensures footer stays at bottom */
+}

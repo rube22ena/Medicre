@@ -48,7 +48,7 @@ $appts = $stmt->fetchAll();
 ?>
 
 <link rel="stylesheet" href="../includes/headerstyle.css">
-<link rel="stylesheet" href="../css/doctor.css">
+<link rel="stylesheet" href="../css/Doctor.css">
 <div class="doctor-dashboard">
 <h2>DoctorDashboard</h2>
 <p>Welcome, Dr. <?= htmlspecialchars($_SESSION['name']) ?>! Here are your appointments.</p>
@@ -56,6 +56,10 @@ $appts = $stmt->fetchAll();
 <?php if(isset($_GET['msg']) && $_GET['msg'] === 'record_saved'): ?>
   <p style="color:green; font-weight:bold;">Record saved successfully!</p>
 <?php endif; ?>
+<!-- <div class="doctor-actions">
+  <a href="doctor_leave_request.php" class="btn">➕ Request Leave</a>
+</div> -->
+
 <div class="filters">
   <a href="?filter=all">All</a> |
   <a href="?filter=today">Today</a> |

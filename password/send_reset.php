@@ -1,4 +1,4 @@
-<?php
+<?php  
 require_once '../includes/db-connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -19,11 +19,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Instead of sending email, show link directly
         $resetLink = "http://localhost/MEDICREPROJECT/Medicre/password/reset_password.php?token=" . $token;
 
-echo "<p>Password reset link generated successfully.</p>";
-echo "<a href='$resetLink'>
-        <button style='padding:10px 20px; background-color:#007BFF; color:white; border:none; border-radius:5px; cursor:pointer;'>
-          Reset Password
-        </button>
-      </a>";
-    }}
+        echo "<div class='reset-success'>";
+        echo "<p>Password reset link generated successfully.</p>";
+        echo "<a href='$resetLink' class='reset-btn'>Reset Password</a>";
+        echo "</div>";
+    }
+}
 ?>
+
+<style>
+/* Success container */
+.reset-success {
+  text-align: center;
+  margin: 80px auto;
+  padding: 30px;
+  width: 400px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Success message */
+.reset-success p {
+  color: #0f9691;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Reset button */
+.reset-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #0f9691, #0c7a76); /* teal gradient */
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.reset-btn:hover {
+  background: linear-gradient(135deg, #0c7a76, #095f5b);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+</style>

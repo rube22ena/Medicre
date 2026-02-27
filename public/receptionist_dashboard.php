@@ -5,39 +5,39 @@ requireRole('receptionist');
 require_once '../includes/header.php';
 ?>
 <link rel="stylesheet" href="../includes/headerstyle.css">
-<link rel="stylesheet" href="../css/Receptionist.css">
 
+<style>
+.receptionist-dashboard {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.receptionist-dashboard h2 {
+  font-size: 26px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 6px;
+}
+
+.receptionist-dashboard p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+</style>
 <div class="receptionist-dashboard">
   <h2>Receptionist Dashboard</h2>
-  <p>Welcome, <?= htmlspecialchars($_SESSION['name']) ?>! Here you can manage doctors, schedules, leaves, and patient appointments.</p>
-
+  <p>Welcome, <?= htmlspecialchars($_SESSION['name']) ?>! Here’s your overview of patient appointments.</p>
 </div>
-
-<?php
-// Fetch all doctors
-$doctors = $pdo->query("SELECT user_id, name, specialization FROM user WHERE role = 'doctor' ORDER BY name")->fetchAll();
-?>
+  <div class="appointments-section">
+    <?php include 'appointments_list.php'; ?>
+  </div>
 
 
-<h3>Doctor List</h3>
-<table border="1" cellpadding="6" style="border-collapse:collapse; margin-top:12px;">
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Specialization</th>
-    <th>Actions</th>
-  </tr>
-  <?php foreach($doctors as $d): ?>
-    <tr>
-      <td><?= $d['user_id'] ?></td>
-      <td><?= htmlspecialchars($d['name']) ?></td>
-      <td><?= htmlspecialchars($d['specialization']) ?></td>
-      <td>
-        <a href="doctor_schedule.php?doctor_id=<?= $d['user_id'] ?>">Schedule</a> |
-        <a href="doctor_leave.php?doctor_id=<?= $d['user_id'] ?>">Leave</a>
-      </td>
-    </tr>
-  <?php endforeach; ?>
-</table>
 <?php include '../includes/footer.php'; ?>
- 

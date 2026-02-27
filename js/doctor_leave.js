@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const today = new Date();
       const chosen = new Date(date.value);
       today.setHours(0,0,0,0);
+      chosen.setHours(0,0,0,0); // normalize chosen date too
       if (chosen < today) {
         errors.push("Leave date cannot be in the past.");
       }

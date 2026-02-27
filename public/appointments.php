@@ -6,7 +6,7 @@ requireRole(['patient']); // only patients can use this page
 require_once '../includes/availability_helper.php'; // slot helper
 
 include '../includes/header.php';
-
+//  include '../public/dashboard.php'; 
 // --- Doctor info (optional) ---
 $doctor_id = isset($_GET['doctor_id']) ? (int) $_GET['doctor_id'] : 0;
 $doctor = null;
@@ -66,33 +66,51 @@ if ($selectedDate === date('Y-m-d')) {
   <input type="hidden" name="doctor_id" value="<?= (int) $doctor['user_id'] ?>">
   <input type="hidden" name="department" value="<?= htmlspecialchars($doctor['specialization']) ?>">
 
-  <label>Your Name</label><br>
-  <input type="text" name="name" required><br><br>
+<label>Your Name</label><br>
+<input type="text" name="name" required 
+       value="<?= htmlspecialchars($_POST['name'] ?? '') ?>"><br><br>
 
-  <label>Gender</label><br>
-  <select name="gender" required>
-    <option value="">Select</option>
-    <option value="Male">Male</option>
-    <option value="Female">Female</option>
-    <option value="Other">Other</option>
-  </select><br><br>
+<label>Gender</label><br>
+<select name="gender" required>
+  <option value="">Select</option>
+  <option value="Male" <?= (($_POST['gender'] ?? '') === 'Male') ? 'selected' : '' ?>>Male</option>
+  <option value="Female" <?= (($_POST['gender'] ?? '') === 'Female') ? 'selected' : '' ?>>Female</option>
+  <option value="Other" <?= (($_POST['gender'] ?? '') === 'Other') ? 'selected' : '' ?>>Other</option>
+</select><br><br>
 
-  <label>Age</label><br>
-  <input type="number" name="age" required min="1" max="120"><br><br>
+<label>Age</label><br>
+<input type="number" name="age" required min="1" max="120"
+       value="<?= htmlspecialchars($_POST['age'] ?? '') ?>"><br><br>
 
-  <label>Mobile Number</label><br>
-  <input type="text" name="mobile" required><br><br>
+<label>Mobile Number</label><br>
+<input type="text" name="mobile" required 
+       value="<?= htmlspecialchars($_POST['mobile'] ?? '') ?>"><br><br>
 
-  <label>Email</label><br>
-  <input type="email" name="email" required><br><br>
+<label>Email</label><br>
+<input type="email" name="email" required 
+       value="<?= htmlspecialchars($_POST['email'] ?? '') ?>"><br><br>
 
-  <label>Address</label><br>
-  <textarea name="address" rows="2" required></textarea><br><br>
+<label>Address</label><br>
+<textarea name="address" rows="2" required><?= htmlspecialchars($_POST['address'] ?? '') ?></textarea><br><br>
 
-  <label>Appointment Date</label><br>
+<label>Blood Group</label><br>
+<select name="blood_group" required>
+  <option value="">Select Blood Group</option>
+  <option value="A+" <?= (($_POST['blood_group'] ?? '') === 'A+') ? 'selected' : '' ?>>A+</option>
+  <option value="A-" <?= (($_POST['blood_group'] ?? '') === 'A-') ? 'selected' : '' ?>>A-</option>
+  <option value="B+" <?= (($_POST['blood_group'] ?? '') === 'B+') ? 'selected' : '' ?>>B+</option>
+  <option value="B-" <?= (($_POST['blood_group'] ?? '') === 'B-') ? 'selected' : '' ?>>B-</option>
+  <option value="AB+" <?= (($_POST['blood_group'] ?? '') === 'AB+') ? 'selected' : '' ?>>AB+</option>
+  <option value="AB-" <?= (($_POST['blood_group'] ?? '') === 'AB-') ? 'selected' : '' ?>>AB-</option>
+  <option value="O+" <?= (($_POST['blood_group'] ?? '') === 'O+') ? 'selected' : '' ?>>O+</option>
+  <option value="O-" <?= (($_POST['blood_group'] ?? '') === 'O-') ? 'selected' : '' ?>>O-</option>
+</select><br><br>
+ 
+   <label>Appointment Date</label>
   <input type="date" name="appointment_date" required min="<?= date('Y-m-d') ?>"
-    value="<?= htmlspecialchars($selectedDate) ?>"
+    value="<?= htmlspecialchars($_GET['appointment_date'] ?? $selectedDate) ?>"
     onchange="location.href='appointments.php?doctor_id=<?= (int) $doctor['user_id'] ?>&appointment_date=' + this.value;">
+
 
   <label>Appointment Time</label><br>
   <?php if (empty($slots)): ?>
@@ -174,7 +192,7 @@ if ($rows) {
   echo "<p>You have no appointments yet.</p>";
 } 
 ?>
- <link rel="stylesheet" href="../css/appointments.css">  
+ <link rel="stylesheet" href="../css/Appointments.css">  
   <link rel="stylesheet" href="../includes/headerstyle.css">
 
 <?php include '../includes/footer.php'; ?>

@@ -1,5 +1,3 @@
-
-
 /* General page styling */
 body {
   font-family: Arial, sans-serif;
@@ -8,19 +6,35 @@ body {
   padding: 0;
 }
 
-h2 {
+h2, h3 {
   text-align: center;
   color: #0f9691;
   margin: 20px 0;
 }
 
 /* Success and error messages */
-p[style*="color:green"],
-p[style*="color:red"],
-p[style*="color:orange"] {
+.alert.success {
   text-align: center;
   font-weight: bold;
-  margin: 10px 0;
+  margin: 10px auto;
+  max-width: 600px;
+  background: #eaf9ea;
+  border: 1px solid #2ecc71;
+  color: #2e7d32;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.alert.error {
+  text-align: center;
+  font-weight: bold;
+  margin: 10px auto;
+  max-width: 600px;
+  background: #fdecea;
+  border: 1px solid #e74c3c;
+  color: #c0392b;
+  padding: 10px;
+  border-radius: 6px;
 }
 
 /* Form styling */
@@ -40,7 +54,7 @@ p[style*="color:orange"] {
 }
 
 .doctor-leave-form input,
-.doctor-leave-form select {
+.doctor-leave-form textarea {
   width: 100%;
   padding: 8px;
   margin-top: 6px;
@@ -67,7 +81,7 @@ p[style*="color:orange"] {
 }
 
 /* Table styling */
-table {
+.leave-table {
   width: 90%;
   margin: 0 auto 30px auto;
   border-collapse: collapse;
@@ -75,34 +89,33 @@ table {
   box-shadow: 0 3px 8px rgba(0,0,0,0.05);
 }
 
-table th, table td {
+.leave-table th, .leave-table td {
   border: 1px solid #e0e0e0;
   padding: 10px;
   text-align: center;
 }
 
-table th {
+.leave-table th {
   background: #0f9691;
   color: white;
   font-weight: bold;
 }
 
-table tr:nth-child(even) {
+.leave-table tr:nth-child(even) {
   background: #f9f9f9;
 }
 
-/* Delete button styling */
-table button {
-  background: #f0f0f0;
-  color: #333;
-  border: 1px solid #ccc;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
+.leave-table tr:hover {
+  background: #eaf3fc;
 }
 
-table button:hover {
-  background: #e0e0e0;
+/* Footer styling */
+footer {
+  background: #0f9691;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  margin-top: auto;
 }
 footer {
   background: #0f9691;

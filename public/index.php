@@ -168,7 +168,7 @@ session_start();
       <div class="hero-text">
         <h3>✨ Experience No Wait Times</h3>
         <p>Instant appointment with Doctors. Patients can instantly book appointments with top doctors and avoid long
-          queues. Telemedicine service is also available.</p>
+          queues. Healthrecord service is also available.</p>
         <a href="doctor_list.php" class="btn-doctors">👨‍⚕️ Our Doctors</a>
       </div>
     </section>
@@ -212,9 +212,9 @@ session_start();
       <h3>Better Patient Records</h3>
       <ul>
         <li>✓ View Patient History</li>
-        <li>✓ Records safely stored in the Cloud</li>
-        <li>✓ Store details like Blood Group, Allergies, BMI, Chronic Ailments</li>
-        <li>✓ Easy access to Lab Test Reports</li>
+        <li>✓ Records safely stored </li>
+        <li>✓ Store details like Blood Group, Allergies, </li>
+        
       </ul>
     </div>
 

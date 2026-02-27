@@ -1,30 +1,37 @@
+/* doctor_schedule_request.css */
 
-
-/* General page styling */
-body {
-  font-family: Arial, sans-serif;
-  background: #f7f9fa;
-  margin: 0;
-  padding: 0;
-}
-
-h2 {
+/* Page heading */
+h2, h3 {
   text-align: center;
   color: #0f9691;
   margin: 20px 0;
+  font-family: Arial, sans-serif;
 }
 
-/* Success and error messages */
-p[style*="color:green"],
-p[style*="color:red"],
-p[style*="color:orange"] {
-  text-align: center;
+/* Alerts */
+.alert {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 12px;
+  border-radius: 6px;
   font-weight: bold;
-  margin: 10px 0;
+  text-align: center;
+}
+
+.alert.success {
+  background: #eaf9ea;
+  border: 1px solid #2ecc71;
+  color: #2e7d32;
+}
+
+.alert.error {
+  background: #fdecea;
+  border: 1px solid #e74c3c;
+  color: #c0392b;
 }
 
 /* Form styling */
-.doctor-leave-form {
+.doctor-schedule-form {
   max-width: 480px;
   margin: 0 auto 20px auto;
   padding: 20px;
@@ -34,13 +41,16 @@ p[style*="color:orange"] {
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-.doctor-leave-form label {
+.doctor-schedule-form label {
   font-weight: bold;
   color: #0f9691;
+  display: block;
+  margin-top: 10px;
 }
 
-.doctor-leave-form input,
-.doctor-leave-form select {
+.doctor-schedule-form input[type="date"],
+.doctor-schedule-form input[type="time"],
+.doctor-schedule-form input[type="checkbox"] {
   width: 100%;
   padding: 8px;
   margin-top: 6px;
@@ -49,10 +59,15 @@ p[style*="color:orange"] {
   font-size: 14px;
 }
 
-.doctor-leave-form button {
+.doctor-schedule-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 6px;
+}
+
+.doctor-schedule-form .btn {
   width: 100%;
   padding: 10px;
-  margin-top: 12px;
+  margin-top: 15px;
   background: #0f9691;
   color: white;
   border: none;
@@ -62,12 +77,12 @@ p[style*="color:orange"] {
   font-weight: bold;
 }
 
-.doctor-leave-form button:hover {
+.doctor-schedule-form .btn:hover {
   background: #0c7a76;
 }
 
 /* Table styling */
-table {
+.schedule-table {
   width: 90%;
   margin: 0 auto 30px auto;
   border-collapse: collapse;
@@ -75,39 +90,31 @@ table {
   box-shadow: 0 3px 8px rgba(0,0,0,0.05);
 }
 
-table th, table td {
+.schedule-table th, .schedule-table td {
   border: 1px solid #e0e0e0;
   padding: 10px;
   text-align: center;
 }
 
-table th {
+.schedule-table th {
   background: #0f9691;
   color: white;
   font-weight: bold;
 }
 
-table tr:nth-child(even) {
+.schedule-table tr:nth-child(even) {
   background: #f9f9f9;
 }
 
-/* Delete button styling */
-table button {
-  background: #f0f0f0;
-  color: #333;
-  border: 1px solid #ccc;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
+.schedule-table tr:hover {
+  background: #eaf3fc;
 }
 
-table button:hover {
-  background: #e0e0e0;
-}
+/* Footer styling */
 footer {
   background: #0f9691;
   color: #fff;
   text-align: center;
   padding: 12px;
-  margin-top: auto;          /* ensures footer stays at bottom */
+  margin-top: auto;
 }

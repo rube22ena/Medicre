@@ -1,90 +1,37 @@
 <?php
 require_once '../includes/db-connect.php';
 require_once '../includes/auth.php';
-requireRole(['receptionist']);
+requireRole(['receptionist']); // Only receptionists can access
 include '../includes/header.php';
-
-// Fetch all doctors for dropdown
-$doctors = $pdo->query("SELECT user_id, name FROM user WHERE role='doctor' ORDER BY name")->fetchAll();
 
 $msg = null;
 $error = null;
 
+// Handle receptionist actions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    // Add leave
-    if (isset($_POST['leave_date'], $_POST['doctor_id'])) {
-        $errors = [];
-
-        $doctor_id = (int)($_POST['doctor_id'] ?? 0);
-        $leave_date_raw = $_POST['leave_date'] ?? '';
-        $reason = trim($_POST['reason'] ?? '');
-
-        // 1) Validate doctor
-        if ($doctor_id <= 0) {
-            $errors[] = "Invalid doctor selected.";
-        } else {
-            $stmt = $pdo->prepare("SELECT user_id FROM user WHERE user_id=? AND role='doctor'");
-            $stmt->execute([$doctor_id]);
-            if (!$stmt->fetchColumn()) {
-                $errors[] = "Selected doctor does not exist.";
-            }
-        }
-
-        // 2) Validate date format and not past
-        $dt = DateTime::createFromFormat('Y-m-d', $leave_date_raw);
-        $date_ok = $dt && $dt->format('Y-m-d') === $leave_date_raw;
-        if (!$date_ok) {
-            $errors[] = "Invalid date format.";
-        } else {
-            $today = new DateTime('today');
-            if ($dt < $today) {
-                $errors[] = "Leave date cannot be in the past.";
-            }
-        }
-
-        // 3) Reason length (optional, but constrained)
-        if (strlen($reason) > 200) {
-            $errors[] = "Reason must be less than 200 characters.";
-        }
-
-        // 4) Prevent duplicate leave (same doctor + date)
-        if (empty($errors)) {
-            $stmt = $pdo->prepare("SELECT 1 FROM doctor_leave WHERE doctor_id=? AND leave_date=?");
-            $stmt->execute([$doctor_id, $leave_date_raw]);
-            if ($stmt->fetch()) {
-                $errors[] = "Leave for this doctor on this date already exists.";
-            }
-        }
-
-        // Final decision
-        if (!empty($errors)) {
-            $error = implode(' ', $errors);
-        } else {
-            try {
-                $stmt = $pdo->prepare("INSERT INTO doctor_leave (doctor_id, leave_date, reason) VALUES (?,?,?)");
-                $stmt->execute([$doctor_id, $leave_date_raw, $reason !== '' ? $reason : null]);
-                $msg = "Leave added.";
-            } catch (PDOException $e) {
-                $error = "Failed to add leave. Please try again.";
-            }
-        }
+    // Approve leave
+    if (isset($_POST['approve_leave_id'])) {
+        $leave_id = (int)$_POST['approve_leave_id'];
+        $pdo->prepare("UPDATE doctor_leave SET status='approved' WHERE leave_id=?")->execute([$leave_id]);
+        $msg = "Leave approved.";
     }
 
-    // Delete leave
+    // Deny leave
+    if (isset($_POST['deny_leave_id'])) {
+        $leave_id = (int)$_POST['deny_leave_id'];
+        $pdo->prepare("UPDATE doctor_leave SET status='denied' WHERE leave_id=?")->execute([$leave_id]);
+        $msg = "Leave denied.";
+    }
+
+    // Delete leave (optional cleanup)
     if (isset($_POST['delete_leave_id'])) {
         $leave_id = (int)$_POST['delete_leave_id'];
-        try {
-            $stmt = $pdo->prepare("DELETE FROM doctor_leave WHERE leave_id=?");
-            $stmt->execute([$leave_id]);
-            $msg = "Leave removed.";
-        } catch (PDOException $e) {
-            $error = "Failed to remove leave.";
-        }
+        $pdo->prepare("DELETE FROM doctor_leave WHERE leave_id=?")->execute([$leave_id]);
+        $msg = "Leave removed.";
     }
 }
 
-// Load existing leaves
+// Load all leave requests
 $leaves = $pdo->query("
     SELECT dl.*, u.name
     FROM doctor_leave dl
@@ -92,45 +39,64 @@ $leaves = $pdo->query("
     ORDER BY leave_date DESC
 ")->fetchAll();
 ?>
+
 <link rel="stylesheet" href="../includes/headerstyle.css">
 <link rel="stylesheet" href="../css/doctor_leave.css">
-<h2>Manage Doctor Leave</h2>
 
-<?php if($msg): ?><p style="color:green;"><?= htmlspecialchars($msg) ?></p><?php endif; ?>
-<?php if($error): ?><p style="color:red;"><?= htmlspecialchars($error) ?></p><?php endif; ?>
+<div class="doctor-leave-container">
+  <h2>Manage Doctor Leave Requests</h2>
 
-<form method="post" class="doctor-leave-form">
-  <label><strong>Doctor</strong></label><br>
-  <select name="doctor_id" required>
-    <?php foreach($doctors as $doc): ?>
-      <option value="<?= $doc['user_id'] ?>"><?= htmlspecialchars($doc['name']) ?></option>
-    <?php endforeach; ?>
-  </select><br><br>
+  <?php if($msg): ?><div class="alert success"><?= htmlspecialchars($msg) ?></div><?php endif; ?>
+  <?php if($error): ?><div class="alert error"><?= htmlspecialchars($error) ?></div><?php endif; ?>
 
-  <label><strong>Date</strong></label><br>
-  <input type="date" name="leave_date" required min="<?= date('Y-m-d') ?>"><br><br>
-
-  <label><strong>Reason (Optional)</strong></label><br>
-  <input type="text" name="reason" placeholder="Optional" maxlength="200"><br><br>
-
-  <button type="submit">Add Leave</button>
-</form>
-
-<table border="1" cellpadding="6" style="margin-top:12px; border-collapse:collapse;">
-  <tr><th>Doctor</th><th>Date</th><th>Reason</th><th>Action</th></tr>
-  <?php foreach($leaves as $r): ?>
-    <tr>
-      <td><?= htmlspecialchars($r['name']) ?></td>
-      <td><?= htmlspecialchars($r['leave_date']) ?></td>
-      <td><?= htmlspecialchars($r['reason'] ?? '') ?></td>
-      <td>
-        <form method="post" style="display:inline;">
-          <input type="hidden" name="delete_leave_id" value="<?= (int)$r['leave_id'] ?>">
-          <button type="submit" onclick="return confirm('Delete this leave?')">Delete</button>
-        </form>
-      </td>
-    </tr>
-  <?php endforeach; ?>
-</table>
+  <table class="leave-table">
+    <thead>
+      <tr>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Reason</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach($leaves as $r): ?>
+        <tr>
+          <td><?= htmlspecialchars($r['name']) ?></td>
+          <td><?= htmlspecialchars($r['leave_date']) ?></td>
+          <td><?= htmlspecialchars($r['reason'] ?? '') ?></td>
+          <td><?= ucfirst($r['status']) ?></td>
+  <td>
+    <?php if($r['status'] === 'pending'): ?>
+      <form method="post" style="display:inline;">
+        <input type="hidden" name="approve_leave_id" value="<?= (int)$r['leave_id'] ?>">
+        <button type="submit" class="btn">Approve</button>
+      </form>
+      <form method="post" style="display:inline;">
+        <input type="hidden" name="deny_leave_id" value="<?= (int)$r['leave_id'] ?>">
+        <button type="submit" class="btn delete">Deny</button>
+      </form>
+    <?php elseif($r['status'] === 'approved'): ?>
+      <form method="post" style="display:inline;">
+        <input type="hidden" name="deny_leave_id" value="<?= (int)$r['leave_id'] ?>">
+        <button type="submit" class="btn delete">Deny</button>
+      </form>
+    <?php elseif($r['status'] === 'denied'): ?>
+      <form method="post" style="display:inline;">
+        <input type="hidden" name="approve_leave_id" value="<?= (int)$r['leave_id'] ?>">
+        <button type="submit" class="btn">Approve</button>
+      </form>
+    <?php else: ?>
+      <form method="post" style="display:inline;">
+        <input type="hidden" name="delete_leave_id" value="<?= (int)$r['leave_id'] ?>">
+        <button type="submit" class="btn delete">Delete</button>
+      </form>
+    <?php endif; ?>
+  </td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+</div>
 
 <?php include '../includes/footer.php'; ?>

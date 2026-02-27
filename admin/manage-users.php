@@ -194,3 +194,4 @@ function toggleSpecializationAndPhoto() {
     </tr>
   <?php endforeach; ?>
 </table>
+<?php include '../includes/footer.php'; ?>

@@ -62,8 +62,10 @@
   text-align: center;
 }
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  background: #0f9691;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  margin-top: auto;   /* pushes footer to bottom */
   width: 100%;
 }

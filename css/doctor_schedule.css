@@ -97,3 +97,10 @@ table button {
 table button:hover {
   background: #e0e0e0;
 }
+footer {
+  background: #0f9691;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  margin-top: auto;          /* ensures footer stays at bottom */
+}

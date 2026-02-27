@@ -1,19 +1,21 @@
-/* doctor-grid.css */
-
 /* General page styling */
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: #f4f8fb;
   color: #0e0f0f;
+  min-height: 100vh;          /* ensures full height */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Heading */
 h2 {
   text-align: center;
   color: #0f9691;
-  font-size: 28px;
-  margin: 30px 0;
+  font-size: 30px;
+  margin: 40px 0 20px;
+  font-weight: bold;
 }
 
 /* Doctor grid container */
@@ -23,13 +25,14 @@ h2 {
   gap: 25px;
   justify-content: center;
   padding: 20px;
+  flex: 1;                   /* pushes footer down */
 }
 
 /* Doctor card */
 .doctor-card {
   background: #fff;
   border-radius: 12px;
-  width: 220px;
+  width: 240px;
   padding: 20px;
   text-align: center;
   box-shadow: 0 6px 14px rgba(0,0,0,0.1);
@@ -38,15 +41,15 @@ h2 {
 
 .doctor-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
 }
 
-/* Doctor photo — fixed size */
+/* Doctor photo */
 .doctor-card img {
   width: 150px;
   height: 150px;
-  object-fit: cover;   /* ensures image fills box evenly */
-  border-radius: 50%;  /* makes it circular */
+  object-fit: cover;
+  border-radius: 50%;
   margin-bottom: 12px;
   border: 3px solid #0f9691;
 }
@@ -54,8 +57,9 @@ h2 {
 /* Doctor name */
 .doctor-card h3 {
   margin: 8px 0;
-  font-size: 18px;
+  font-size: 20px;
   color: #0f9691;
+  font-weight: 600;
 }
 
 /* Specialization */
@@ -65,12 +69,12 @@ h2 {
   margin-bottom: 15px;
 }
 
-/* Select button */
+/* Book button */
 .doctor-card button {
   background: #0f9691;
   color: #fff;
   border: none;
-  padding: 8px 16px;
+  padding: 10px 18px;
   border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
@@ -82,6 +86,8 @@ h2 {
   background: #0c7a76;
   transform: scale(1.05);
 }
+
+/* Specialization filter */
 .specialization-filter {
   text-align: center;
   margin-bottom: 30px;
@@ -95,15 +101,45 @@ h2 {
   color: #fff;
   border-radius: 6px;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
+  font-weight: 600;
 }
 
 .specialization-filter a:hover {
   background: #0c7a76;
+  transform: translateY(-2px);
 }
+
+/* Active filter highlight */
+.specialization-filter a.active {
+  background: #ff9800;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Footer */
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  background: #0f9691;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  margin-top: auto;          /* ensures footer stays at bottom */
+}
+/* Login button styling */
+/* Login button styling */
+.nav-links a.login-btn {
+  background: linear-gradient(135deg, #ff9800, #ff5722); /* vibrant gradient */
+  color: #fff;
+  padding: 10px 20px;          /* extra padding for comfort */
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.nav-links a.login-btn:hover {
+  background: linear-gradient(135deg, #e68900, #e64a19); /* darker gradient on hover */
+  transform: translateY(-2px) scale(1.05);               /* subtle lift + zoom */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }

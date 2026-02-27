@@ -3,6 +3,7 @@ require_once '../includes/db-connect.php';
 require_once '../includes/auth.php';
 include '../includes/header.php';
 
+
 // Get specialization from URL (default = all)
 $specialization = $_GET['specialization'] ?? 'all';
 
@@ -36,7 +37,7 @@ $doctors = $stmt->fetchAll();
   <a href="doctor_list.php?specialization=Laboratory" class="<?= ($specialization==='Laboratory')?'active':'' ?>">Laboratory</a>
 </div>
 
-<link rel="stylesheet" href="../css/doctor-grid.css">
+<link rel="stylesheet" href="../css/Doctor-grid.css">
 <link rel="stylesheet" href="../includes/headerstyle.css">
 
 <!-- Doctor profiles -->
