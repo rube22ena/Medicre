@@ -98,7 +98,17 @@ if (!$data) {
 
   <label>Address</label><br>
   <textarea name="address" rows="2" required><?= htmlspecialchars($data['address']) ?></textarea><br>
-
+     <label>Blood Group</label><br>
+<select name="blood_group" required>
+  <option value="">Select Blood Group</option>
+  <option value="A+" <?= (($_POST['blood_group'] ?? '') === 'A+') ? 'selected' : '' ?>>A+</option>
+  <option value="A-" <?= (($_POST['blood_group'] ?? '') === 'A-') ? 'selected' : '' ?>>A-</option>
+  <option value="B+" <?= (($_POST['blood_group'] ?? '') === 'B+') ? 'selected' : '' ?>>B+</option>
+  <option value="B-" <?= (($_POST['blood_group'] ?? '') === 'B-') ? 'selected' : '' ?>>B-</option>
+  <option value="AB+" <?= (($_POST['blood_group'] ?? '') === 'AB+') ? 'selected' : '' ?>>AB+</option>
+  <option value="AB-" <?= (($_POST['blood_group'] ?? '') === 'AB-') ? 'selected' : '' ?>>AB-</option>
+  <option value="O+" <?= (($_POST['blood_group'] ?? '') === 'O+') ? 'selected' : '' ?>>O+</option>
+  <option value="O-" <?= (($_POST['blood_group'] ?? '') === 'O-') ? 'selected' : '' ?>>O-</option>
   <label>Appointment Date</label><br>
   <input type="date" name="appointment_date" value="<?= $data['appointment_date'] ?>" required><br>
 
@@ -107,5 +117,6 @@ if (!$data) {
 
   <button type="submit">Update Appointment</button>
 </form>
+
 
 <?php include '../includes/footer.php'; ?>

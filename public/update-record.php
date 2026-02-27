@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         // ✅ Fetch patient_id correctly
         $check = $pdo->prepare("
-            SELECT p.patient_id 
+            SELECT patient_id 
             FROM appointments a
             JOIN patient_details p ON p.appointment_id = a.appointment_id
             WHERE a.appointment_id=? AND a.doctor_id=?");
